@@ -7,11 +7,17 @@ jobs:
   rspec:
     working_directory: ~/oshikatsu_diary
     resource_class: small
+    steps:
+      - checkout
+      - run:
+          name: bundle install
+          command: bundle install --path vendor/bundle
+      - run:
+          name: Run RSpec tests
+          command: bundle exec rspec
 
   rubocop:
-    working_directory: ~/potepanec
-    docker:
-      - image: cimg/ruby:2.7.3
+    working_directory: ~/oshikatsu_diary
     resource_class: small
     steps:
       - checkout
