@@ -52,4 +52,4 @@ production:
   <<: *default
   database: oshikatsu_diary_production
   username: oshikatsu_diary
-  password: <%= ENV["OSHIKATSU_DIARY_DATABASE_PASSWORD"] %>
+  url: <%= ENV['JAWSDB_URL']&.sub('mysql://', 'mysql2://') %>
