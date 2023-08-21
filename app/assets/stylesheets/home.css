@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  font-family: "M PLUS 1p";
+}
+
+.FirstView {
+  max-width: 100%;
+  margin-top: 0px;
+  margin-bottom: 80px;
+  height: 650px;
+  padding-top: 80px;
+  background-image: url("./firstview.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 40%;
+}
+
+.Container {
+  max-width: 1440px;
+  padding: 0 32px;
+  margin: 0 auto;
+}
+
+.FirstViewTitle {
+  font-family: 'Kiwi Maru', serif;
+  font-size:  clamp(20px, 10vw, 60px);
+  font-weight: lighter;
+  line-height: 72px;
+  color: rgba(255, 255, 255, 0.901);
+  text-align: center;
+  margin-bottom: 5px;
+  margin-top: 120px;
+}
+
+@media(max-width: 769px) {
+  .FirstView {
+    background-size:cover;
+    background-position: 30%;
+    height: 580px;
+  }
+}

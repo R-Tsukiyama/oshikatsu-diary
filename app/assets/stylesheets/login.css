@@ -1,0 +1,126 @@
+.AccountFormWrapper {
+  background-image: url("./firstview.png");
+  background-size: cover;
+  display: block;
+  padding: 120px;
+}
+
+.AccountFormContainer {
+  background-color: #1c1c1c78;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 
+  0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  margin: auto;
+  padding: 20px;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border-radius: 0.5rem;
+}
+
+.form-group {
+  display: block;
+  margin-bottom: 2rem;
+  padding: 15px;
+  margin-left: 1rem;
+  margin-right: 2rem;
+  text-align: left;
+  align-items: center;
+}
+
+.form-label {
+  line-height: 18px;
+  margin-bottom: 5rem;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.7rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  box-shadow: 0 0 px 0 rgba(255, 255, 255, 0.2), 0 5px 5px 0 rgba(255, 255, 255, 0.24);
+  background-color: #13131392;
+  background-clip: padding-box;
+  border: none;
+  text-align: left;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+}
+
+label {
+  color: #ebebeb;
+  font-weight: 700;
+}
+
+.AccountFormTitle {
+  color: #fff;
+}
+
+.btn-group {
+  margin-bottom: 50px;
+  color: #fff;
+}
+
+.login-button {
+  color: #fff;
+  border-radius: 50px;
+  border: none;
+  background-color: #79abdd;
+  padding: 15px;
+  margin-bottom: 50px;
+  cursor: pointer;
+  width: 80%;
+  font-size: 15px;
+}
+
+.login-button:hover {
+  background-color: #36608a;
+}
+
+.new-account {
+  color: #fff;
+  padding: 15px;
+  text-decoration: none;
+  margin-bottom: 50px;
+  cursor: pointer;
+  position: relative;
+}
+
+.new-account:hover{
+  color: #92bbe4;
+}
+
+.new-account::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  width: 80%;
+  left: 20px;
+  height: 3px;
+  background: #b7cde1;
+  transition: all .3s;
+  transform: scale(0, 0.3);
+  transform-origin:center top;
+}
+
+.new-account:hover::after {
+  transform: scale(1, 0.3);
+}
+
+.icon {
+  font-size: 18px;
+  margin-right: 5px; 
+  color: #cacacab5;
+}
+
+.remember-me {
+  font-size: 13px;
+  margin-top: 10px;
+  display: flex;
+}

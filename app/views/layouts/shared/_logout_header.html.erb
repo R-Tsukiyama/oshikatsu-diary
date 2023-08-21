@@ -1,0 +1,29 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-logo">
+      <%= link_to home_index_path do %>
+        <%= image_tag 'oshikatsu-logo.png', alt: "サイトロゴ", class: "navbar-logo-img" %>
+      <% end %>
+    </div>
+    <div class="navbar-link">
+      <div class="hamburger-menu">
+        <div class="openbtn-area">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <ul class="navbar-list">
+        <li class="navbar-list-item">
+          <%= link_to 'ホーム', home_index_path %>
+        </li>
+        <li class="navbar-list-item">
+          <%= link_to 'ログイン', new_user_session_path %>
+        </li>
+        <li class="navbar-list-item">
+          <%= link_to '新規登録', new_user_registration_path %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
