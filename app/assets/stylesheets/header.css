@@ -2,6 +2,10 @@ li {
   list-style: none;
 }
 
+p {
+  display: none;
+}
+
 .navbar {
   background-color: #eeddd442;
   background-size: cover;

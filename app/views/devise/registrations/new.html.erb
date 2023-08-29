@@ -4,27 +4,33 @@
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
       <div class="form-group">
-        <%= f.label :name, "ユーザー名【必須】", class: "form-label" %>
-        <%= f.text_field :name, autofocus: true, class: 'form-control', placeholder:"ユーザー名を入力" %>
+        <i class="fas fa-user icon"></i>
+        <%= f.label :username, "ユーザー名", class: "form-label" %>
+        <%= f.text_field :username, autofocus: true, class: 'form-control', placeholder:"ユーザー名を入力" %>
       </div>
 
       <div class="form-group">
-        <%= f.label :email,"メールアドレス【必須】", class: "form-label" %><br>
+        <i class="fas fa-envelope icon"></i>
+        <%= f.label :email,"Email", class: "form-label" %><br>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder:"メールアドレスを入力" %>
       </div>
 
       <div class="form-group">
-        <%= f.label :password, "パスワード【必須】", class: "form-label" %><br>
+        <i class="fas fa-lock icon"></i>
+        <%= f.label :password, "Password", class: "form-label" %><br>
         <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder:"パスワードを入力" %>
       </div>
     
       <div class="form-group">
-        <%= f.label :password_confirmation, "確認用パスワード【必須】", class: "form-label" %><br>
+        <i class="fas fa-lock icon"></i>
+        <%= f.label :password_confirmation, "Password(確認用)", class: "form-label" %><br>
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder:"確認用パスワードを入力" %>
       </div>
-
-      <%= f.submit "新しくアカウントを作成", class: "btn btn-danger", style: "background-color:#ff7757" %><br>
-      <%= link_to "アカウントをお持ちの場合はログイン", new_user_session_path, class:"btn btn-outline-secondary" %>
+      
+      <div class="btn-group">
+        <%= f.submit "新しくアカウントを作成", class: "btn btn-primary login-button" %><br>
+        <%= link_to "登録済みの場合はログイン", new_user_session_path, class: "new-account" %>
+      </div>
     <% end %>  
   </div>
 </div>
