@@ -2,8 +2,8 @@
   background-image: url("./firstview.png");
   background-size: cover;
   display: block;
+  max-width: 100%;
   padding: 120px;
-  min-width: 375px;
 }
 
 .AccountFormContainer {
@@ -11,15 +11,14 @@
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 
   0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   margin: auto;
-  padding: 20px;
   max-width: 500px;
   min-width: 200px;
-  width: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   border-radius: 0.5rem;
+  padding: 20px;
 }
 
 .form-group {
@@ -65,7 +64,7 @@ label {
   color: #fff;
 }
 
-.btn-group {
+.login-signup-button {
   margin-bottom: 50px;
   color: #fff;
 }
@@ -88,33 +87,15 @@ label {
 }
 
 .new-account {
-  color: #fff;
+  color: #ffffff9b;
   padding: 15px;
   text-decoration: none;
   margin-bottom: 40px;
   cursor: pointer;
-  position: relative;
 }
 
 .new-account:hover{
   color: #92bbe4;
-}
-
-.new-account::after {
-  content: '';
-  position: absolute;
-  bottom: 5px;
-  width: 80%;
-  left: 20px;
-  height: 3px;
-  background: #b7cde1;
-  transition: all .3s;
-  transform: scale(0, 0.3);
-  transform-origin:center top;
-}
-
-.new-account:hover::after {
-  transform: scale(1, 0.3);
 }
 
 .icon {
@@ -127,4 +108,23 @@ label {
   font-size: 13px;
   margin-top: 3px;
   display: flex;
+}
+
+.profile-image {
+  border-radius: 50%; /* 丸い形状 */
+}
+
+.username {
+  align-items: center;
+}
+
+/*エラー*/
+.help-block {
+  color: #ff8080c0;
+  font-size: 12px;
+}
+.has-error {
+  .form-control {
+    border: 2px solid #ff8080c0;
+  }
 }

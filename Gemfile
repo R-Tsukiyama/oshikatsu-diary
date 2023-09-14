@@ -29,9 +29,11 @@ gem "jbuilder"
 
 gem 'jquery-rails'
 gem 'devise'
+gem 'devise-i18n'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'dotenv-rails'
+gem 'bootstrap'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

@@ -1,0 +1,20 @@
+footer {
+  align-items: center;
+  background-color: #5b4660e6;
+  display: flex;
+  height: 465px;
+  min-width:100%;
+  .container-fluid {
+  max-width: 1440px;
+  padding: 0;
+  margin: auto;
+  }
+}
+
+footer > div {
+  margin-top: 100px;
+}
+
+.footer-logo {
+  width: 294px;
+}

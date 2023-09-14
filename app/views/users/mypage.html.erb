@@ -1,0 +1,27 @@
+<section class="UserSection">
+  <h2>ユーザー情報</h2>
+  <div class="UserContainer">
+    <ul class="NavList">
+      <li class="NavListItem <%= 'active' if current_page?(users_show_path) %>">
+       <%= link_to "プロフィール", users_show_path, class:"NavListItemLink" %>
+      </li>
+      <li class="NavListItem">
+        <%= link_to "アカウント", users_mypage_path, class:"NavListItemLink" %>
+      </li>
+    </ul>
+    <div class="AccountInformation">
+      <div class="AccountHeader">
+        <h3>アカウント</h3>
+        <%= link_to "編集", edit_user_registration_path, class:"AccountEditLink" %>
+      </div>
+      <div class="AccountItem">
+        <h4>メールアドレス</h4>
+        <p><%= @user.email %></p>
+      </div>
+      <div class="AccountItem">
+        <h4>パスワード</h4>
+        <p>******</p>
+      </div>
+    </div>
+  </div>
+</section>

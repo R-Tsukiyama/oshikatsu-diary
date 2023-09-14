@@ -1,0 +1,115 @@
+.UserSection {
+  padding: 40px 32px 160px 32px;
+  background-color: rgb(255, 255, 255) ;
+  h2 {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 39px;
+    margin-bottom: 24px;
+  }
+
+  .UserContainer {
+    display: flex;
+    gap: 32px;
+    background-color: #59567778;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 
+    0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    margin: auto;
+    max-width: 700px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border-radius: 0.5rem;
+    padding: 20px;
+    .NavList {
+      display: flex;
+      justify-content: space-between;
+      padding-left: 0;
+    }
+    .NavListItem {
+      padding: 20px 24px;
+    }
+    .NavListItemLink {
+      color: #e8f3ff;
+      font-size: 16px;
+      text-decoration: dashed;
+    }
+    .AccountInformation {
+      width: calc(100% - 32px);
+    }
+    .AccountHeader {
+      align-items: center;
+      border-bottom: 1px solid #dfe2e6;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      padding-bottom: 8px;
+      > h3 {
+          color: #ffffff;
+          font-size: 40px;
+          font-weight: 500;
+          line-height: 39px;
+        }
+      > .AccountEditLink {
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 30px;
+          text-decoration: none;
+        }
+    }
+    .AccountItem {
+      align-items: center;
+      display: flex;
+      margin-bottom: 50px;
+      margin-left: 10px;
+      h4 {
+        color: #585b7a;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 20px;
+        width: 25%;
+        margin-right: 50px;
+      }
+      p {
+        margin: 10px;
+        font-size: 20px;
+        text-align: center;
+        color: #555666;
+      }
+    }
+  }
+}
+.form-buttons {
+  margin-left: 50%;
+  margin-bottom: 25px;
+  justify-content: space-between;
+  .submit {
+    margin-left: 5%;
+    color: #fff;
+    border-radius: 50px;
+    border: none;
+    background-color: #79abdd;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 15px;
+  }
+}
+
+.user-image-preview {
+  border-radius: 50% !important;
+}
+
+.user-icon-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

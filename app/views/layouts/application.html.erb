@@ -21,9 +21,9 @@
         <%= render "layouts/shared/logout_header" %>
       <% end %>
     </header>
-    
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
     <%= yield %>
+    
+    <%= render 'layouts/shared/footer' %>
   </body>
 </html>

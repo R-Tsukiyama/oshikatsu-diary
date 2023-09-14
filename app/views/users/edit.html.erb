@@ -1,0 +1,63 @@
+<section class="UserSection">
+  <h2>編集</h2>
+  <div class="UserContainer">
+    <ul class="NavList">
+      <li class="NavListItem <%= 'active' if current_page?(users_show_edit_path) %>">
+        <%= link_to "プロフィール", users_show_path, class:"NavListItemLink" %>
+      </li>
+      <li class="NavListItem">
+        <%= link_to "アカウント", users_mypage_path, class:"NavListItemLink" %>
+      </li>
+    </ul>
+    <div class="AccountInformation">
+      <div class="AccountHeader">
+        <h3>プロフィール</h3>
+        <%= link_to "編集", users_show_edit_path, class:"AccountEditLink" %>
+      </div>
+      <%= form_for @user, url: user_path(@user), method: :patch do |f| %>
+      <div class="mb-4 form-group">
+        <div class="label-text">
+          <%= f.label :userimage, "アイコン画像", class: "form-label" %>
+        </div>
+        <div class="user-icon-group">
+          <div class ="user-icon">
+            <% if current_user.userimage? %>
+              <%= image_tag current_user.userimage.url, class: "rounded-circle", size: '150x150' %>
+            <% else %>
+              <%= image_tag ("default-avatar.png"), class: "rounded-circle", size: '150x150' %>
+            <% end %>
+          </div>
+          <p>⇨</p>
+          <div class="user-icon" id="user-image-preview-container">
+            <img id="user-image-preview" class="rounded-circle" width="150" height="150" src="<%= @user.userimage.url if current_user.userimage? %>" alt="<%= @user.userimage.url.present? ? 'アイコン画像プレビュー' : '' %>">
+          </div>
+        </div>
+        <br>
+        <div class="upload-form">
+          <%= f.file_field :userimage, label: "画像をアップロード", class: 'form-control' %>
+        </div>
+      </div>
+      <div class="mb-4 form-group">
+        <div class="label-text">
+          <%= f.label :username, class: "form-label" %>
+        </div>
+        <div class="input-form">
+          <%= f.text_field :username, class: 'form-control', placeholder:"名前を入力" %>
+        </div>
+      </div>
+      <div class="mb-4 form-group">
+        <div class="label-profile">
+          <%= f.label :profile, "自己紹介", class: "form-label" %>
+        </div>
+        <div class="input-form">
+          <%= f.text_area :profile, class: 'form-control', id:"form-introduction", placeholder:"自己紹介を入力" %>
+        </div>
+      </div>    
+      <div class="form-buttons">
+        <%= link_to "キャンセル", users_show_path, class:"btn btn-outline-secondary cancel " %>
+        <%= f.submit "保存", class:"btn submit " %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,35 @@
+<section class="UserSection">
+  <h2>ユーザー情報</h2>
+  <div class="UserContainer">
+    <ul class="NavList">
+      <li class="NavListItem <%= 'active' if current_page?(users_show_path) %>">
+        <%= link_to "プロフィール", users_show_path, class:"NavListItemLink" %>
+      </li>
+      <li class="NavListItem">
+        <%= link_to "アカウント", users_mypage_path, class:"NavListItemLink" %>
+      </li>
+    </ul>
+    <div class="AccountInformation">
+      <div class="AccountHeader">
+        <h3>プロフィール</h3>
+        <%= link_to "編集", users_show_edit_path, class:"AccountEditLink" %>
+      </div>
+      <div class="AccountItem">
+        <h4>アイコン画像</h4>
+        <% if current_user.userimage? %>
+          <%= image_tag current_user.userimage.url, class: "rounded-circle", size: '150x150' %>
+        <% else %>
+          <%= image_tag ("default-avatar.png"), class: "rounded-circle", size: '150x150' %>
+        <% end %>
+      </div>
+      <div class="AccountItem">
+        <h4>名前</h4>
+        <p><%= @user.username %></p>
+      </div>
+      <div class="AccountItem">
+        <h4>自己紹介</h4>
+        <p><%= @user.profile %> </p>
+      </div>
+    </div>
+  </div>
+</section>

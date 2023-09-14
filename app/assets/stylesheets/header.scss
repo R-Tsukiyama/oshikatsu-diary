@@ -2,17 +2,12 @@ li {
   list-style: none;
 }
 
-p {
-  display: none;
-}
-
 .navbar {
-  background-color: #eeddd442;
+  background-color: #5b4660e6;
   background-size: cover;
-  height: 80px;
-  position: fixed;
+  height: 120px;
   min-width:100%;
-  padding: 0;
+  padding: 10px;
 }
 
 .navbar a {
@@ -154,5 +149,40 @@ p {
   }
   .navbar {
     height: 60px;
+  }
+}
+
+.dropdown {
+  a {
+    text-decoration: none;
+  }
+  .btn-secondary {
+    background-color: #5b4660e6;
+    border-color: #5b4660e6;
+  }
+  .btn:focus {
+    box-shadow: none;
+  }
+  .username {
+    color: #fff;
+  }
+  img {
+    margin-right: 8px;
+  }
+  .dropdown-menu {
+    text-align: center;
+    padding: 9px 0;
+
+    .dropdown-item {
+      font-size: 14px;
+      line-height: 18px;
+      padding: 0 8px;
+      > a {
+        color: #333;
+        display: block;
+        width: 100%;
+        text-decoration: none;
+      }
+    }
   }
 }

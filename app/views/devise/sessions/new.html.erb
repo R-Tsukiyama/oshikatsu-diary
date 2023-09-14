@@ -2,6 +2,7 @@
   <div class="AccountFormContainer">
     <h2 class="AccountFormTitle">ログイン</h2>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    
       <div class="form-group">
         <i class="fas fa-envelope icon"></i>
         <%= f.label :email, class: "form-label" %>
@@ -20,8 +21,8 @@
         <% end %>
       </div>
 
-      <div class="btn-group">
-        <%= f.submit "ログイン", class: "btn btn-primary login-button" %><br>
+      <div class="login-signup-button">
+        <%= f.submit "ログイン", class: "login-button" %><br>
         <%= link_to "アカウントを新規作成", new_user_registration_path, class: "new-account" %>
       </div>
     <% end %>

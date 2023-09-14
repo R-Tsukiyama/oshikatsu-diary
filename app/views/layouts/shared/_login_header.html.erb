@@ -1,0 +1,28 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-logo">
+      <%= link_to home_index_path do %>
+        <%= image_tag 'oshikatsu-logo.png', alt: "サイトロゴ", class: "navbar-logo-img" %>
+      <% end %>
+    </div>
+    <div class="dropdown">
+      <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="userinformation">
+          <% if current_user.userimage? %>
+            <%= image_tag current_user.userimage.url, class: "profile-image", size: '50x50' %>
+          <% else %>
+            <%= image_tag ("default-avatar.png"), class: "profile-image", size: '50x50' %>
+          <% end %>
+          <span class="username"><%= current_user.username %></span>
+        </div>
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <li class="dropdown-item"><%= link_to "マイページ", users_show_path %></li>
+        <hr class="dropdown-hr">
+        <li class="dropdown-item"><%= link_to "アカウント編集", users_show_edit_path %></li>
+        <hr class="dropdown-hr">
+        <li class="dropdown-item"><%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete } %></li>
+      </ul>
+    </div>
+  </div>
+</nav>
