@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "home#index"
   get 'home/index'
   get 'users/mypage', to: 'users#mypage'
+  get 'users/:user_id', to: 'users#show', as: 'user_show'
   get 'users/show', to: 'users#show'
   get 'users/show/edit', to: 'users#edit'
   resources :users, only: [:edit, :update, :mypage,:show]
