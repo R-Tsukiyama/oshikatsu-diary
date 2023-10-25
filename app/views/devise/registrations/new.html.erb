@@ -27,10 +27,10 @@
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder:"確認用パスワードを入力" %>
       </div>
       
-      <div class="btn-group">
-        <%= f.submit "新しくアカウントを作成", class: "btn btn-primary login-button" %><br>
+      <div class="login-signup-button">
+        <%= f.submit "新しくアカウントを作成", class: "login-button" %><br>
         <%= link_to "登録済みの場合はログイン", new_user_session_path, class: "new-account" %>
       </div>
-    <% end %>  
+    <% end %>
   </div>
 </div>

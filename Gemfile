@@ -34,6 +34,10 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'dotenv-rails'
 gem 'bootstrap'
+gem 'acts-as-taggable-on'
+gem 'gmaps4rails'
+gem 'geocoder'
+gem 'jquery-ui-rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

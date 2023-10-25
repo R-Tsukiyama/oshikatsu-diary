@@ -1,0 +1,59 @@
+#map {
+  height: 250px;
+  border-radius: 0.5rem;
+}
+
+.map {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.PostContainer {
+  display: flex;
+  gap: 32px;
+  background-color: #59567778;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 
+  0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  margin: auto;
+  max-width: 700px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border-radius: 0.5rem;
+  padding: 20px;
+  h2 {
+    color: white;
+  }
+}
+
+.postform {
+  width: 70%;
+  margin: 10px;
+  border-radius: 10px;
+  margin-top: 2px;
+  margin-bottom: 20px;
+}
+
+.postform-caption {
+  width: 70%;
+  height: 200px;
+  margin: 10px;
+  border-radius: 10px;
+  margin-top: 2px;
+  margin-bottom: 20px;
+  border: 2px solid #000;
+}
+
+.btn-post {
+  margin: 30px;
+  width: 100px;
+  color: #fff;
+  border-radius: 50px;
+  border: solid white;
+  background-color: #86b5e5;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 15px;
+}

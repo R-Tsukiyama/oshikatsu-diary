@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         reader.readAsDataURL(file);
       } else {
-        // ユーザーがファイルを選択しない場合、プレビューを非表示にします
         userImagePreview.style.display = "none";
       }
     });

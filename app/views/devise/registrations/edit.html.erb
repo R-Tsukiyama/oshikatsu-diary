@@ -3,7 +3,7 @@
   <div class="UserContainer">
     <ul class="NavList">
       <li class="NavListItem">
-        <%= link_to "プロフィール", user_profile_path(@user.user_id), class:"NavListItemLink" %>
+        <%= link_to "プロフィール", users_show_path, class:"NavListItemLink" %>
       </li>
       <li class="NavListItem <%= 'active' if current_page?(edit_user_registration_path) %>">
         <%= link_to "アカウント", users_mypage_path, class:"NavListItemLink" %>

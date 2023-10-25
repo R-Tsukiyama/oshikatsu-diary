@@ -42,7 +42,7 @@
           <%= f.label :username, class: "form-label" %>
         </div>
         <div class="input-form">
-          <%= f.text_field :username, class: 'form-control', placeholder:"名前を入力" %>
+          <%= f.text_field :username, class: 'form-control', placeholder: "名前を入力" %>
         </div>
       </div>
       <div class="mb-4 form-group">
@@ -50,7 +50,7 @@
           <%= f.label :user_id, "ユーザーID", class: "form-label" %>
         </div>
         <div class="input-form">
-          <%= f.text_field :user_id, class: 'form-control', id:"form-introduction" %>
+          <%= f.text_field :user_id, class: 'form-control', id: "form-introduction" %>
         </div>
       </div>
       <div class="mb-4 form-group">
@@ -58,12 +58,12 @@
           <%= f.label :profile, "自己紹介", class: "form-label" %>
         </div>
         <div class="input-form">
-          <%= f.text_area :profile, class: 'form-control', id:"form-introduction", placeholder:"自己紹介を入力" %>
+          <%= f.text_area :profile, class: 'form-control', id: "form-introduction", placeholder: "自己紹介を入力" %>
         </div>
       </div>    
       <div class="form-buttons">
-        <%= link_to "キャンセル", users_show_path, class:"btn btn-outline-secondary cancel " %>
-        <%= f.submit "保存", class:"btn submit " %>
+        <%= link_to "キャンセル", users_show_path, class: "btn btn-outline-secondary cancel " %>
+        <%= f.submit "保存", class:"btn submit" %>
       </div>
       <% end %>
     </div>

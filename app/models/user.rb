@@ -6,7 +6,8 @@ class User < ApplicationRecord
   validates :username, presence: true
   validates :profile, length: { maximum: 200 }
   mount_uploader :userimage, ImageUploader
-  
+  has_many :posts
+
   before_create :generate_user_id
 
   private
