@@ -26,6 +26,26 @@
   h2 {
     color: white;
   }
+  .form-control {
+    width: 70% !important;
+    align-items: center !important;
+    margin-left: 15%;
+    margin-right: 25%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid;
+  }
+  .help-block {
+    color: #b84848c0;
+    font-size: 12px;
+  }
+  .has-error {
+    .form-control {
+      border: 2px solid #ff8080c0;
+      margin-bottom: 0;
+    }
+    margin-bottom: 20px;
+  }
 }
 
 .postform {
@@ -56,4 +76,8 @@
   padding: 10px;
   cursor: pointer;
   font-size: 15px;
+}
+
+.color-change-class {
+  color: rgb(0, 119, 255); 
 }

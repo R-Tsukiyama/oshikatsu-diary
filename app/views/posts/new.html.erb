@@ -1,15 +1,16 @@
 <% content_for :js do %>
   <%= javascript_import_module_tag "map" %>
+  <%= javascript_import_module_tag "tag" %>
 <% end %>
 
 <section class="PostSection">
   <div class="PostContainer">
   <h2>✴︎新規投稿✴︎</h2>
-    <%= form_for(@post, url: posts_new_path) do |f| %>
+    <%= form_for(@post, url: posts_path) do |f| %>
       <div class="field">
         <i class="far fa-comment"></i>
         <%= f.label :title, "Title" %><br>
-        <%= f.text_field :title, class: 'postform', placeholder: 'タイトルを入力' %>
+        <%= f.text_field :title, class: 'form-control', placeholder: 'タイトルを入力' %>
       </div>
       <div class="field">
         <i class="fas fa-pen"></i>
@@ -19,7 +20,7 @@
       <div class="field">
         <i class="fas fa-tag"></i>
         <%= f.label :tag_list, 'Tags' %><br>
-        <%= f.text_field :tag_list, value: @post.tag_list.join(","), class: 'postform', id: 'myTags', placeholder: 'タグを入力' %>
+        <%= f.text_field :tag_list, value: @post.tag_list.join(","), class: 'postform', id: 'myTag', placeholder: 'タグを入力' %>
       </div>
       <div class="field">
         <i class="fas fa-map-marker-alt"></i>

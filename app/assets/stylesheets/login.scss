@@ -19,6 +19,15 @@
   text-align: center;
   border-radius: 0.5rem;
   padding: 20px;
+  .help-block {
+    color: #ff8080c0;
+    font-size: 12px;
+  }
+  .has-error {
+    .form-control {
+      border: 2px solid #ff8080c0;
+    }
+  }
 }
 
 .form-group {
@@ -116,15 +125,4 @@ label {
 
 .username {
   align-items: center;
-}
-
-/*エラー*/
-.help-block {
-  color: #ff8080c0;
-  font-size: 12px;
-}
-.has-error {
-  .form-control {
-    border: 2px solid #ff8080c0;
-  }
 }
