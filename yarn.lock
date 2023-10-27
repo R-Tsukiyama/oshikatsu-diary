@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+flatpickr@^4.6.13:
+  version "4.6.13"
+  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.6.13.tgz#8a029548187fd6e0d670908471e43abe9ad18d94"
+  integrity sha512-97PMG/aywoYpB4IvbvUJi0RQi8vearvU0oov1WW3k0WZPBMrTQVqekSX5CjSG/M4Q3i6A/0FKXC7RyAoAUUSPw==
+
 tag-it@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/tag-it/-/tag-it-2.0.0.tgz#7b618759df840fb90294a54257a947fa2b148542"

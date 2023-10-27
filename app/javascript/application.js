@@ -4,4 +4,4 @@
 //= require bootstrap-sprockets
 import "controllers"
 import "map"
-import "tag"
+import "post"

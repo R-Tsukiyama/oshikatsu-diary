@@ -20,7 +20,7 @@ class PostsController < ApplicationController
       # タグを処理
       @post.tag_list.add(params[:post][:tag_list], parse: true)
       @post.save
-      redirect_to @post, notice: '新規投稿されました。'
+      redirect_to posts_index_path, notice: '新規投稿されました。'
     else
       render :new
     end
@@ -50,6 +50,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :caption, :address, :latitude, :longitude, :tag_list, :image)
+    params.require(:post).permit(:title, :date, :caption, :address, :latitude, :longitude, :tag_list)
   end
 end

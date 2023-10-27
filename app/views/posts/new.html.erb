@@ -1,6 +1,6 @@
 <% content_for :js do %>
   <%= javascript_import_module_tag "map" %>
-  <%= javascript_import_module_tag "tag" %>
+  <%= javascript_import_module_tag "post" %>
 <% end %>
 
 <section class="PostSection">
@@ -13,13 +13,19 @@
         <%= f.text_field :title, class: 'form-control', placeholder: 'タイトルを入力' %>
       </div>
       <div class="field">
+        <i class="far fa-calendar"></i>
+        <%= f.label :date, "Date" %><br>
+        <%= f.date_field :date, class: 'form-control', id: 'flatpickr', placeholder: '日付を選択' %>
+        <div id="date-error" class="text-danger"></div>
+      </div>
+      <div class="field">
         <i class="fas fa-pen"></i>
         <%= f.label :caption %><br>
         <%= f.text_area :caption, class: 'postform-caption', placeholder: 'キャプションを入力' %>
       </div>
       <div class="field">
         <i class="fas fa-tag"></i>
-        <%= f.label :tag_list, 'Tags' %><br>
+        <%= f.label :tag_list, 'Tags' %><br><p>(","でタグの複数登録ができます)</p>
         <%= f.text_field :tag_list, value: @post.tag_list.join(","), class: 'postform', id: 'myTag', placeholder: 'タグを入力' %>
       </div>
       <div class="field">
