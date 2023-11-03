@@ -1,91 +1,71 @@
 .UserSection {
-  padding: 40px 32px 160px 32px;
-  background-color: rgb(255, 255, 255) ;
-  h2 {
-    font-size: 28px;
-    font-weight: 500;
-    line-height: 39px;
-    margin-bottom: 24px;
-    color: #fff;
-    background-color: #74675759;
-    width: 200px;
-    border-radius: 10px;
-    text-align: center;
-  }
+  margin: 10px;
+}
 
-  .UserContainer {
-    display: flex;
-    gap: 32px;
-    background-color: #59567778;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 
-    0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-    margin: auto;
-    max-width: 700px;
-    min-width: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    border-radius: 0.5rem;
-    padding: 20px;
-    .NavList {
-      display: flex;
-      justify-content: space-between;
-      padding-left: 0;
-    }
-    .NavListItem {
-      padding: 20px 24px;
-    }
-    .NavListItemLink {
-      color: #e8f3ff;
-      font-size: 16px;
-      text-decoration: dashed;
-    }
-    .AccountInformation {
-      width: calc(100% - 32px);
-    }
-    .AccountHeader {
-      align-items: center;
-      border-bottom: 1px solid #dfe2e6;
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 24px;
-      padding-bottom: 8px;
-      > h3 {
-          color: #ffffff;
-          font-size: 40px;
-          font-weight: 500;
-          line-height: 39px;
-        }
-      > .AccountEditLink {
-          font-size: 20px;
-          font-weight: 500;
-          line-height: 30px;
-          text-decoration: none;
-        }
-    }
-    .AccountItem {
-      align-items: center;
-      display: flex;
-      margin-bottom: 50px;
-      margin-left: 10px;
-      h4 {
-        color: #585b7a;
-        font-size: 16px;
-        font-weight: 700;
-        line-height: 20px;
-        width: 25%;
-        margin-right: 50px;
-      }
-      p {
-        margin: 10px;
-        font-size: 20px;
-        text-align: center;
-        color: #555666;
-      }
-    }
+.UserContainer {
+  display: flex;
+}
+
+.NavList {
+  list-style: none;
+  padding: 5px;
+  display: flex;
+  text-align: center;
+}
+
+.NavListItem {
+  margin-right: 20px;
+  color: #1da1f2;
+  font-weight: bold;
+  transition: color 0.3s;
+  a {
+    text-decoration: none;
   }
 }
+
+.NavListItem:hover {
+  color: #0077b5;
+}
+
+.AccountInformation {
+  background-color: #ffffff;
+  border: 1px solid #e1e8ed;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.AccountHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  #dropdown-button {
+    cursor: pointer;
+  }
+}
+
+.AccountEditLink {
+  text-decoration: none;
+  color: #1da1f2;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.AccountEditLink:hover {
+  color: #0077b5;
+}
+
+.Avatar img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+.ProfileInfo {
+  margin-left: 20px;
+}
+
 .form-buttons {
   margin-left: 50%;
   margin-bottom: 25px;
@@ -106,15 +86,154 @@
   border-radius: 50% !important;
 }
 
-.user-icon-group {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  p {
+.AccountItem {
+  margin-bottom: 10px;
+  h4 {
+    margin-bottom: 3px;
+    font-size: 17px;
+    font-weight: bold;
+    background-color: #b274df82;
     color: #fff;
-    font-size: 40px;
+    padding: 2px;
+    border-radius: 20px;
     text-align: center;
-    padding-left: 15px;
-    padding-right: 15px;
+  }
+  p {
+    text-align: center;
+  }
+  .rounded-circle {
+    margin-left: 30px;
+  }
+}
+
+/* 編集画面 */
+.UserEditContainer {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+
+  h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #5aa5cdc1;
+    font-weight: bold;
+    font-style: oblique;
+  }
+  
+  p {
+    color: #1da1f2;
+    font-size: 65px;
+  }
+  
+  .NavList {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+  }
+
+  .NavListItem {
+    display: flex;
+    align-items: center;
+  }
+
+  .NavListItem i {
+    margin-right: 5px;
+  }
+  
+  .user-icon-group {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    justify-content: space-between;
+  }
+
+  .user-icon {
+    margin-right: 20px;
+  }
+
+  .upload-form {
+    margin: 20px 0;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .label-text {
+    font-weight: bold;
+  }
+  
+  .form-label {
+    color: #1da1f2;
+    font-weight: bold;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .btn-outline-secondary {
+    background-color: transparent;
+    border: 2px solid #1da1f2;
+    color: #1da1f2;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 25px;
+  }
+
+  .btn-outline-secondary:hover {
+    background-color: #1da1f2;
+    color: #fff;
+  }
+
+  .submit {
+    background-color: #1da1f2;
+    color: #fff;
+    border-radius: 25px;
+  }
+
+  .cancel {
+    margin-right: 10px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .UserEditContainer {
+      padding: 10px;
+    }
+
+    .NavList {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .NavListItem {
+      margin-bottom: 10px;
+    }
+
+    .user-icon-group {
+      align-items: center;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .rounded-circle {
+      width: 120px;
+      height: 120px;
+    }
+    
+    p {
+      font-size: 50px;
+    }
   }
 }

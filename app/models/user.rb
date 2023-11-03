@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :username, presence: true
   validates :profile, length: { maximum: 200 }
-  mount_uploader :userimage, ImageUploader
-  has_many :posts
+  mount_uploader :userimage, UserimageUploader
+  has_many :posts, class_name: 'Post'
 
   before_create :generate_user_id
 

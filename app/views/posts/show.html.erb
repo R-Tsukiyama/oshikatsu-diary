@@ -1,0 +1,36 @@
+<% content_for :js do %>
+    <%= javascript_import_module_tag "map-show" %>
+<% end %>
+<section class="PostSection">
+  <div class="PostContainer">
+  <ul class="NavList">
+      <li class="NavListItem">
+      <%= link_to(:back) do %>
+        <i class="fas fa-reply"></i>
+        戻る
+      <% end %>
+      </li>
+    </ul>
+    <h2>投稿詳細</2>
+    <div class="PostItem">
+      <h4>Title</h4>
+      <p><%= @post.title %></p>
+    </div>
+    <div class="PostItem">
+      <h4>Date</h4>
+      <p><%= @post.date %></p>
+    </div>
+    <div class="PostItem">
+      <h4>Caption</h4>
+      <p><%= @post.caption %></p>
+    </div>
+    <div class="PostItem">
+      <h4>Address</h4>
+      <p><%= @post.address %></p>
+      <div class="map"><div id="map"></div></div>
+    </div>
+    <div class="PostItem">
+      <h4>Tag</h4>
+      <p><%= @post.tag_list %></p>
+    </div>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&libraries=places&callback=initMap" defer></script>

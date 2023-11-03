@@ -1,12 +1,12 @@
 <section class="UserSection">
   <h2>ユーザー情報</h2>
-  <div class="UserContainer">
+  <div class="UserEditContainer">
     <ul class="NavList">
-      <li class="NavListItem <%= 'active' if current_page?(users_show_path) %>">
-       <%= link_to "プロフィール", users_show_path, class:"NavListItemLink" %>
-      </li>
       <li class="NavListItem">
-        <%= link_to "アカウント", users_mypage_path, class:"NavListItemLink" %>
+        <%= link_to(:back) do %>
+          <i class="fas fa-reply"></i>
+          戻る
+        <% end %>
       </li>
     </ul>
     <div class="AccountInformation">
@@ -16,11 +16,11 @@
       </div>
       <div class="AccountItem">
         <h4>メールアドレス</h4>
-        <p><%= @user.email %></p>
+        <h5><%= @user.email %></h5>
       </div>
       <div class="AccountItem">
         <h4>パスワード</h4>
-        <p>******</p>
+        <h5>******</h5>
       </div>
     </div>
   </div>

@@ -1,0 +1,91 @@
+.simple-calendar {
+  .has-events {
+    background: #fbba60 !important;
+  }
+  .wday-0 {
+    color: rgba(223, 57, 57, 0.899);
+  }
+  .wday-6 {
+     color: rgb(72, 156, 189);
+  } 
+}
+
+.CalendarContainer {
+  padding: 20px;
+}
+
+.calendar-btn {
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  background-color: #908f89bf;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: large;
+  font-weight: bold;
+}
+
+.calendar-heading {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  margin: 5px;
+}
+
+.post-index {
+  padding: 10px;
+}
+.user-post-container {
+  display: flex;
+}
+
+.user-section {
+  margin-right: 10px;
+}
+
+.post-section {
+  flex: 1;
+  margin: 10px;
+}
+
+.floating-action-button {
+  position: fixed;
+  bottom: 20px;
+  right: 50px;
+  z-index: 1000;
+}
+
+.article {
+  position: relative;
+  padding: 10px 5px;
+}
+
+.balloon {
+  position: absolute; /* 三角の位置を固定するために設定 */
+  left: -30px;
+  top: -40px;
+  width: 120px; /* 幅 */
+  margin: 0 auto 10px; /* 上 左右 下のマージン */
+  padding: 5px; /* ふきだし内の余白 */
+  background: #b274df82; /* 背景色 */
+  text-align: center; /* テキストの揃え */
+  font-weight: bold;
+  color: #fff;
+  border-radius: 25px;
+}
+.balloon::after {
+  content: '';
+  border: 8px solid transparent;
+  border-top-color: #b274df82;
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  margin-left: -8px;
+}
+.jump {
+  animation: 0.5s jump infinite alternate linear;
+}
+@keyframes jump {
+  to { transform: transtateY(0); }
+  from { transform: translateY(4px); }
+}

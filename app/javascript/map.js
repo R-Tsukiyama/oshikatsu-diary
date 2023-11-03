@@ -6,8 +6,8 @@ function initMap() {
   geocoder = new google.maps.Geocoder();
 
   map = new google.maps.Map(document.getElementById('map'), {
-    center: { lat: 0, lng: 0 },
-    zoom: 1
+    center: { lat: 38.2049, lng: 138.2529 },
+    zoom: 4
   });
 
   const locationField = document.getElementById('address');

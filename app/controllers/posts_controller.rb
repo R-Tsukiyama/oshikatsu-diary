@@ -2,12 +2,15 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @posts = Post.all
+    @posts = Post.includes(:tags).all.order(date: :desc)
+    @user = current_user
   end
 
   def show
     @post = Post.find(params[:id])
-    @tags = @post.tag_counts_on(:tags) 
+    @tags = @post.tag_counts_on(:tags)
+    @lat = @post.latitude
+    @lng = @post.longitude
   end
 
   def new
@@ -17,11 +20,14 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      # タグを処理
-      @post.tag_list.add(params[:post][:tag_list], parse: true)
-      @post.save
-      redirect_to posts_index_path, notice: '新規投稿されました。'
+      tag_list = params[:post][:tag_list]
+      if tag_list.present?
+        @post.tag_list.add(tag_list, parse: true)
+        @post.save
+      end
+      redirect_to posts_path, notice: '新規投稿されました。'
     else
+      flash[:error] = @post.errors.full_messages.to_sentence
       render :new
     end
   end
@@ -50,6 +56,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :date, :caption, :address, :latitude, :longitude, :tag_list)
+    params.require(:post).permit(:title, :date, :caption, :address, :latitude, :longitude, :tag_list, :image)
   end
 end

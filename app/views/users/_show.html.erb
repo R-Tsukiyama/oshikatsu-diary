@@ -1,0 +1,36 @@
+<section class="UserSection">
+  <div class="UserContainer">
+    <div class="AccountInformation">
+      <div class="AccountHeader">
+        <div class="dropdown">
+          <div class="d-flex align-items-center justify-content-center" id="dropdown-button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-cog"></i>
+          </div>
+          <ul class="dropdown-menu DropdownMenu" aria-labelledby="dropdown-button">
+            <li class="dropdown-item"><%= link_to "アカウント", users_mypage_path, class:"NavListItemLink" %></li>
+            <li class="dropdown-item"><%= link_to "編集", users_show_edit_path, class:"AccountEditLink" %></li>
+          </ul>
+        </div>
+      </div>
+      <div class="AccountItem">
+        <% if current_user.userimage? %>
+          <%= image_tag current_user.userimage.url, class: "rounded-circle", size: '100x100' %>
+        <% else %>
+          <%= image_tag ("default-avatar.png"), class: "rounded-circle", size: '100x100' %>
+        <% end %>
+      </div>
+      <div class="AccountItem">
+        <h4>Name</h4>
+        <p><%= @user.username %></p>
+      </div>
+      <div class="AccountItem">
+        <h4>Profile</h4>
+        <p><%= @user.profile %></p>
+      </div>
+      <div class="AccountItem">
+        <h4>User ID</h4>
+        <p><%= @user.user_id %></p>
+      </div>
+    </div>
+  </div>
+</section>

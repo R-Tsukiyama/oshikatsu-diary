@@ -1,18 +1,16 @@
-<section class="UserSection">
-  <h2>設定</h2>
-  <div class="UserContainer">
+<section class="UserEditSection">
+  <div class="UserEditContainer">
     <ul class="NavList">
       <li class="NavListItem">
-        <%= link_to "プロフィール", users_show_path, class:"NavListItemLink" %>
-      </li>
-      <li class="NavListItem <%= 'active' if current_page?(edit_user_registration_path) %>">
-        <%= link_to "アカウント", users_mypage_path, class:"NavListItemLink" %>
+      <%= link_to(:back) do %>
+        <i class="fas fa-reply"></i>
+        戻る
+      <% end %>
       </li>
     </ul>
     <div class="AccountInformation">
       <div class="AccountHeader">
-        <h3>アカウント</h3>
-        <%= link_to "編集", edit_user_registration_path, class:"AccountEditLink" %>
+        <h3>アカウント編集</h3>
       </div>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <div class="mb-4 form-group">
@@ -55,3 +53,4 @@
     </div>
   </div>
 </section>
+<%= render 'layouts/shared/footer' %>

@@ -1,19 +1,15 @@
-<section class="UserSection">
-  <h2>編集</h2>
-  <div class="UserContainer">
+<section class="UserEditSection">
+  <div class="UserEditContainer">
     <ul class="NavList">
-      <li class="NavListItem <%= 'active' if current_page?(users_show_edit_path) %>">
-        <%= link_to "プロフィール", users_show_path, class:"NavListItemLink" %>
-      </li>
       <li class="NavListItem">
-        <%= link_to "アカウント", users_mypage_path, class:"NavListItemLink" %>
+        <%= link_to(:back) do %>
+          <i class="fas fa-reply"></i>
+          戻る
+        <% end %>
       </li>
+      <h3>プロフィール編集</h3>
     </ul>
     <div class="AccountInformation">
-      <div class="AccountHeader">
-        <h3>プロフィール</h3>
-        <%= link_to "編集", users_show_edit_path, class:"AccountEditLink" %>
-      </div>
       <%= form_for @user, url: user_path(@user), method: :patch do |f| %>
       <div class="mb-4 form-group">
         <div class="label-text">
@@ -62,7 +58,7 @@
         </div>
       </div>    
       <div class="form-buttons">
-        <%= link_to "キャンセル", users_show_path, class: "btn btn-outline-secondary cancel " %>
+        <%= button_to "キャンセル", users_show_path, class: "btn btn-outline-secondary cancel " %>
         <%= f.submit "保存", class:"btn submit" %>
       </div>
       <% end %>
