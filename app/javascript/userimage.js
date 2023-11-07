@@ -1,4 +1,4 @@
-document.addEventListener("turbo:load", function () {
+document.addEventListener('turbo:load', function () {
     const userImageInput = document.getElementById("user_userimage");
     const userImagePreview = document.getElementById("user-image-preview");
   

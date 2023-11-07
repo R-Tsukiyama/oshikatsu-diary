@@ -1,6 +1,3 @@
-<% content_for :js do %>
-  <%= javascript_import_module_tag "post" %>
-<% end %>
 <div class="user-post-container">
   <div class="user-section">
     <%= render 'users/show' %>
@@ -35,12 +32,12 @@
                   <td><%= render 'layouts/shared/tag_list', tag_list: post.tag_list %></td>
                   <td>
                     <div class="dropdown">
-                      <div class="d-flex align-items-center justify-content-center" id="dropdown-button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-bars"></i>
+                      <div class="d-flex" id="dropdown-button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-ellipsis-v"></i>
                       </div>
                       <ul class="dropdown-menu DropdownMenu" aria-labelledby="dropdown-button">
                         <li class="dropdown-item"><%= link_to "編集", edit_post_path(post) %></li>
-                        <li class="dropdown-item danger"><%= link_to "削除", post_path(post), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" } %></li>
+                        <li class="dropdown-item danger"><%= link_to "削除", post_path(post), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" }, class: "text-danger" %></li>
                       </ul>
                     </div>
                   </td>
@@ -55,10 +52,10 @@
           <div class="CalendarContainer">
             <%= month_calendar events: @posts do |date, post| %>
               <%= date.day %><br>
-                <% post.each do |post| %>
-                  <%= post.title %>
-                <% end %>
+              <% post.each do |post| %>
+                <%= post.title %>
               <% end %>
+            <% end %>
           </div>
         </turbo-frame>
       </div>

@@ -46,6 +46,27 @@
 .post-section {
   flex: 1;
   margin: 10px;
+  td {
+    a {
+    text-decoration: none;
+    color: #817cca;
+    font-weight: bold;
+    }
+  }
+  .dropdown {
+    margin-bottom: 0;
+    margin-top: 2px;
+    cursor: pointer;
+    margin-left: 45px;
+  }
+  .nav-item {
+    a {
+      color: #5c1ec1;
+    }
+  }
+  tr {
+    justify-content: space-between;
+  }
 }
 
 .floating-action-button {
@@ -58,6 +79,13 @@
 .article {
   position: relative;
   padding: 10px 5px;
+}
+
+.btn.btn-primary {
+  background-color: #817cca;
+  color: #fff;
+  border: none;
+  margin-bottom: 1px;
 }
 
 .balloon {

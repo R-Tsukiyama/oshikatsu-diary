@@ -7,10 +7,9 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.includes(:tags, :images).find(params[:id])
     @tags = @post.tag_counts_on(:tags)
-    @lat = @post.latitude
-    @lng = @post.longitude
+    @image = @post.images
   end
 
   def new
@@ -20,11 +19,18 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
+      if params[:post][:images].present?
+        @post.images.purge
+        params[:post][:images].each do |image|
+          @post.images.attach(image)
+        end
+      end
+      
       tag_list = params[:post][:tag_list]
       if tag_list.present?
         @post.tag_list.add(tag_list, parse: true)
-        @post.save
       end
+
       redirect_to posts_path, notice: '新規投稿されました。'
     else
       flash[:error] = @post.errors.full_messages.to_sentence
@@ -56,6 +62,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :date, :caption, :address, :latitude, :longitude, :tag_list, :image)
+    params.require(:post).permit(:title, :date, :caption, :address, :latitude, :longitude, :tag_list, images: [])
   end
 end

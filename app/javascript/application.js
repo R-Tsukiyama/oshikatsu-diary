@@ -3,9 +3,11 @@
 //= require popper
 //= require bootstrap-sprockets
 import "controllers"
-import "map"
-import "map-show"
 import "post"
 import "header"
 import "userimage"
 import "@hotwired/turbo-rails"
+
+var mySwiper = new Swiper('.swiper-container', {
+    loop: true
+  });

@@ -1,36 +1,90 @@
-<% content_for :js do %>
-    <%= javascript_import_module_tag "map-show" %>
-<% end %>
-<section class="PostSection">
-  <div class="PostContainer">
-  <ul class="NavList">
+<section class="PostShowSection">
+  <div class="PostShowContainer">
+    <ul class="NavList">
       <li class="NavListItem">
-      <%= link_to(:back) do %>
-        <i class="fas fa-reply"></i>
-        戻る
-      <% end %>
+        <%= link_to posts_index_path do %>
+          <i class="fas fa-reply"></i>
+          戻る
+        <% end %>
+      </li>
+      <li class="NavListItem">
+        <%= link_to posts_edit_path do %>
+          <i class="fas fa-edit"></i>
+          編集
+        <% end %>
       </li>
     </ul>
     <h2>投稿詳細</2>
     <div class="PostItem">
-      <h4>Title</h4>
-      <p><%= @post.title %></p>
+      <i class="far fa-comment"></i>
+      <h4>Title</h4><br>
     </div>
+    <p><%= @post.title %></p>
     <div class="PostItem">
-      <h4>Date</h4>
-      <p><%= @post.date %></p>
+      <i class="far fa-calendar"></i>
+      <h4>Date</h4><br>
     </div>
+    <p><%= @post.date %></p>
     <div class="PostItem">
-      <h4>Caption</h4>
-      <p><%= @post.caption %></p>
+      <i class="fas fa-pen"></i>
+      <h4>Caption</h4><br>
     </div>
+    <p><%= @post.caption %></p>
     <div class="PostItem">
-      <h4>Address</h4>
-      <p><%= @post.address %></p>
-      <div class="map"><div id="map"></div></div>
+      <i class="fas fa-image"></i>
+      <h4>Capcher</h4><br>
     </div>
+    <div class="swiper-container"> 
+    <div class="swiper-wrapper"> 
+      <% if @post.images.attached? %>
+        <% @post.images.each do |image| %>
+          <%= image_tag image, class: "swiper-slide", style: "width: 100%; height: 100%;" %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="swiper-button-prev"></div>
+   <div class="swiper-button-next"></div>
+   <div class="swiper-pagination"></div>
+  </div>
     <div class="PostItem">
-      <h4>Tag</h4>
-      <p><%= @post.tag_list %></p>
+      <i class="fas fa-map-marker-alt"></i>
+      <h4>Address</h4><br>
     </div>
-<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&libraries=places&callback=initMap" defer></script>
+    <p><%= @post.address %></p>
+    <% if @post.address.present? && @post.longitude.present? && @post.latitude.present? %>
+      <div class="map-show" id="map-show"></div>
+    <% end %>
+    <div class="PostItem">
+      <i class="fas fa-tag"></i>
+      <h4>Tag</h4><br>
+    </div>
+    <p class="tag-list">
+      <% @post.tag_list.each do |tag| %>
+        <span class="tag"><%= tag %></span>
+      <% end %>
+    </p>
+  </div>
+</section>
+<% if @post.address.present? %>
+<script>
+  var longitude = <%= @post.longitude %>;
+  var latitude = <%= @post.latitude %>;
+  let map;
+  let marker; 
+
+  function initShowMap() {
+    const mapElement = document.getElementById("map-show");
+    const mapOptions = {
+      center: { lat: latitude, lng: longitude },
+      zoom: 15
+    };
+    map = new google.maps.Map(mapElement, mapOptions);
+    marker = new google.maps.Marker({
+      position: { lat: latitude, lng: longitude },
+      map: map
+    });
+  };
+  window.initShowMap = initShowMap;
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_SHOW_API_KEY'] %>&callback=initShowMap" defer></script>
+<% end %>

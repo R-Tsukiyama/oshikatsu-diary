@@ -15,7 +15,8 @@ Rails.application.routes.draw do
   get 'posts/index', to: 'posts#index'
   get 'posts/edit', to: 'posts#edit'
   get 'posts/:id', to: 'posts#show', as: 'posts_show'
-  resources :posts 
+  get 'posts/show', to: 'posts#show'
+  resources :posts, except: [:show]
   resources :posts do
     collection do
       get 'index'

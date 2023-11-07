@@ -21,3 +21,13 @@
 body {
   font-family: 'Kiwi Maru', serif;
 }
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+.container-for-google-maps {
+  box-sizing: initial;
+}

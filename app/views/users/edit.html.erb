@@ -1,3 +1,6 @@
+<% content_for :js do %>
+  <%= javascript_import_module_tag "userimage" %>
+<% end %>
 <section class="UserEditSection">
   <div class="UserEditContainer">
     <ul class="NavList">
@@ -58,7 +61,7 @@
         </div>
       </div>    
       <div class="form-buttons">
-        <%= button_to "キャンセル", users_show_path, class: "btn btn-outline-secondary cancel " %>
+        <%= link_to "キャンセル", posts_index_path, class: "btn btn-outline-secondary cancel " %>
         <%= f.submit "保存", class:"btn submit" %>
       </div>
       <% end %>

@@ -8,12 +8,14 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/js/swiper.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" as="style">
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&family=Lato:wght@900&display=swap" rel="stylesheet" as="style">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
+    <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet" as="style">
+    <link href="https://npmcdn.com/flatpickr/dist/themes/dark.css" rel="stylesheet" type="text/css" as="style">
+    <meta name="turbo-visit-control" content="reload">
   </head>
 
   <body>
@@ -27,6 +29,7 @@
 
     <%= yield %>
     <%= yield(:js) %>
+    
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
   </body>
