@@ -1,5 +1,5 @@
 <% tag_list.each do |tag|%>
-  <div class="btn btn-primary">
-    <%= tag %>
+  <div class="btn tag-btn">
+    <li><%= link_to tag, search_by_tag_path(tag_name: tag) %></li>
   </div>
 <% end %>

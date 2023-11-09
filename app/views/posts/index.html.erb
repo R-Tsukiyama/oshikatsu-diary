@@ -48,12 +48,12 @@
         </section>
       </div>
       <div class="tab-pane fade" id="calendar" role="tabpanel" aria-labelledby="calendar-tab">
-        <turbo-frame id="calendar-frame">
+        <turbo-frame id="calendar-frame" turbo-visit-control="reload">
           <div class="CalendarContainer">
             <%= month_calendar events: @posts do |date, post| %>
               <%= date.day %><br>
               <% post.each do |post| %>
-                <%= post.title %>
+                <%= link_to post.title, post, data: { turbo_frame: "_top" } %>
               <% end %>
             <% end %>
           </div>

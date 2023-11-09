@@ -7,7 +7,3 @@ import "post"
 import "header"
 import "userimage"
 import "@hotwired/turbo-rails"
-
-var mySwiper = new Swiper('.swiper-container', {
-    loop: true
-  });

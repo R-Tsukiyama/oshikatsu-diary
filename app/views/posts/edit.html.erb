@@ -1,0 +1,105 @@
+<section class="PostSection">
+  <div class="PostContainer">
+  <h2>✴︎編集✴︎</h2>
+  <%= form_for(@post, url: posts_path, html: { multipart: true }) do |f| %>
+      <div class="field">
+        <i class="far fa-comment"></i>
+        <%= f.label :title %>
+        <%= f.text_field :title, value: @post.title %>
+      </div>
+  
+      <div class="field">
+        <%= f.label :date %>
+        <%= f.date_field :date, value: @post.date %>
+      </div>
+  
+      <div class="field">
+        <%= f.label :caption %>
+        <%= f.text_area :caption, value: @post.caption %>
+      </div>
+  
+      <div class="field">
+        <%= f.label :tag_list %>
+        <%= f.text_field :tag_list, value: @post.tag_list.join(', ') %>
+      </div>
+  
+      <div class="field">
+        <i class="fas fa-image"></i>
+        <%= f.label :image, "Captured Images" %><br>
+        <%= f.file_field :images, accept: "image/*", class: 'form-control', multiple: true, id: 'image-upload' %><br>
+      </div>
+      <div class="image-preview-slider">
+      <div id="image-preview" class="image-preview"></div>
+    </div>
+      <div class="image-preview-container">
+      <% if @post.images.attached? %>
+        <% @post.images.each do |image| %>
+          <div class="image-preview-slider">
+            <%= image_tag image %>
+            <%= link_to '削除', destroy_image_post_path(@post, image), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" } %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="field">
+    <i class="fas fa-map-marker-alt"></i>
+    <%= f.label :address, '場所' %><br>
+    <%= f.text_field :address, class: 'postform', id: 'address', value: @post.address %>
+  </div>
+  <div class="map" id="map"></div>
+  <%= f.submit "投稿", class: "btn-post" %>
+  
+      <div class="actions">
+        <%= f.submit '更新' %>
+      </div>
+    <% end %>
+  </div>
+</section>
+<script>
+function initMap() {
+  let map;
+  let geocoder;
+  let marker; 
+  
+  geocoder = new google.maps.Geocoder();
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: { lat: 38.2049, lng: 138.2529 },
+    zoom: 4
+  });
+
+  const locationField = document.getElementById('address');
+  const autocomplete = new google.maps.places.Autocomplete(locationField);
+
+  autocomplete.bindTo('bounds', map);
+
+  autocomplete.addListener('place_changed', function () {
+    const place = autocomplete.getPlace();
+    if (!place.geometry) {
+    window.alert("場所が見つかりません: " + place.name);
+      return;
+      locationField.value = "";
+    };
+
+    if (place.geometry.viewport) {
+      map.fitBounds(place.geometry.viewport);
+    } else {
+      map.setCenter(place.geometry.location);
+      map.setZoom(17);
+    }
+
+    if (marker) {
+      marker.setMap(null);
+    }
+
+    marker = new google.maps.Marker({
+      map: map,
+      position: place.geometry.location,
+      title: place.name
+    });
+  });
+};
+window.initMap = initMap;
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&libraries=places&callback=initMap" defer></script>
+

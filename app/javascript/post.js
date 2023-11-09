@@ -73,3 +73,30 @@ var mySwiper = new Swiper('.swiper-container', {
     prevEl: '.swiper-button-prev',
   },
 });
+
+//カレンダーから投稿詳細への処理
+// カレンダー内でのページ遷移時にturbo-frameを更新
+document.addEventListener("turbo:load", () => {
+  const calendarFrame = document.getElementById("calendar-frame");
+  if (calendarFrame) {
+    calendarFrame.setAttribute("turbo-visit-control", "reload");
+  }
+});
+
+function handleTurboFrameLinkClick(event) {
+  event.preventDefault(); // デフォルトのリンク動作を無効化
+  const href = event.target.getAttribute('href'); // リンクのURLを取得
+
+  // Turboフレーム内での遷移を実行
+  Turbo.visit(href);
+}
+
+document.addEventListener('turbo:load', (event) => {
+  const frame = event.target;
+  const links = frame.querySelectorAll('a[data-turbo-frame="calendar-frame"]');
+
+  links.forEach(link => {
+    link.addEventListener('click', handleTurboFrameLinkClick);
+  });
+});
+

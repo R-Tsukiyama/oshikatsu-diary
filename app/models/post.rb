@@ -5,6 +5,7 @@ class Post < ApplicationRecord
   after_validation :geocode
   has_many :images
   has_many_attached :images
+  attr_accessor :remove_images
   
   validates :title, presence: true
   validates :date, presence: { message: "日付を選択してください" }

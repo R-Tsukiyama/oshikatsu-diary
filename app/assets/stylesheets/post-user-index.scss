@@ -67,6 +67,15 @@
   tr {
     justify-content: space-between;
   }
+  .tag-btn {
+    background-color: #817cca;
+    a {
+      color: #fff;
+    }
+  }
+  .tag-btn:hover{
+    background-color: #5c1ec1;
+  }
 }
 
 .floating-action-button {
@@ -89,18 +98,19 @@
 }
 
 .balloon {
-  position: absolute; /* 三角の位置を固定するために設定 */
+  position: absolute;
   left: -30px;
   top: -40px;
-  width: 120px; /* 幅 */
-  margin: 0 auto 10px; /* 上 左右 下のマージン */
-  padding: 5px; /* ふきだし内の余白 */
-  background: #b274df82; /* 背景色 */
-  text-align: center; /* テキストの揃え */
+  width: 120px;
+  margin: 0 auto 10px;
+  padding: 5px;
+  background: #b274df82;
+  text-align: center;
   font-weight: bold;
   color: #fff;
   border-radius: 25px;
 }
+
 .balloon::after {
   content: '';
   border: 8px solid transparent;
@@ -110,9 +120,11 @@
   left: 50%;
   margin-left: -8px;
 }
+
 .jump {
   animation: 0.5s jump infinite alternate linear;
 }
+
 @keyframes jump {
   to { transform: transtateY(0); }
   from { transform: translateY(4px); }

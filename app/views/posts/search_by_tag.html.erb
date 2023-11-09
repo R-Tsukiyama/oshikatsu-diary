@@ -1,0 +1,29 @@
+<section class="PostSearchTagSection">
+  <div class="PostSearchTagContainer">
+    <ul class="NavList">
+      <li class="NavListItem">
+        <%= link_to posts_index_path do %>
+          <i class="fas fa-reply"></i>
+          戻る
+        <% end %>
+      </li>
+    </ul>
+    <h2><i class="fas fa-tag"></i><div class="tag-name"><%= @selected_tag %></div></h2>
+    <% if @posts.any? %>
+      <p><%= @posts.size %> 件の投稿があります</p>
+      <div class="PostTitleIndex">
+        <ul>
+          <% @posts.each do |post| %>
+            <li>
+              <div class="post-item">
+                <h3><%= link_to post.title, post %></h3>
+                <p><%= post.date %></p>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</section>
+

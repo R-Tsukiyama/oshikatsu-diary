@@ -1,7 +1,7 @@
 <% content_for :js do %>
   <%= javascript_import_module_tag "post" %>
 <% end %>
-
+<%= render "layouts/shared/errors", obj:@post %>
 <section class="PostSection">
   <div class="PostContainer">
   <h2>✴︎新規投稿✴︎</h2>
@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="field">
-        <i class="fas fa-tag"></i>
+        <i class="fas fa-tags"></i>
         <%= f.label :tag_list, 'Tags' %><br><p>(","でタグの複数登録ができます)</p>
         <%= f.text_field :tag_list, value: @post.tag_list.join(","), class: 'postform', id: 'myTag', placeholder: 'タグを入力' %>
       </div>

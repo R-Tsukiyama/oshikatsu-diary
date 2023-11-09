@@ -8,8 +8,7 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/css/swiper.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/js/swiper.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/css/swiper.min.css" rel="stylesheet" as="style">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" as="style">
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&family=Lato:wght@900&display=swap" rel="stylesheet" as="style">
@@ -26,10 +25,20 @@
         <%= render "layouts/shared/logout_header" %>
       <% end %>
     </header>
+    
+    <% if flash[:notice] %>
+      <p>Notice: <%= flash[:notice] %></p>
+    <% end %>
+    <% if flash[:alert] %>
+    <div class="alert alert-danger d-flex align-items-center" role="alert">
+      <p><%= flash[:alert] %></p>
+    </div>
+    <% end %>
 
     <%= yield %>
     <%= yield(:js) %>
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/js/swiper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
   </body>
