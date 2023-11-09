@@ -2,18 +2,12 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :show, :edit, :update]
 
   def index
-    @posts = Post.includes(:tags).all.order(date: :desc)
+    @posts = current_user.posts.includes(:tags).all.order(date: :desc)
     @user = current_user
-    @tags = Post.tag_counts_on(:tags).order('count DESC') 
-    if @tag = params[:tag]
-      @post = Post.tagged_with(params[:tag])
-    end
   end
 
   def show
-    @post = Post.includes(:tags, :images).find(params[:post_id])
-    @tags = @post.tag_counts_on(:tags)
-    @image = @post.images
+    @post = current_user.posts.includes(:tags, :images).find(params[:post_id])
   end
 
   def new
@@ -34,6 +28,9 @@ class PostsController < ApplicationController
       if tag_list.present?
         @post.tag_list.add(tag_list, parse: true)
       end
+      
+      @post = Post.includes(:tags, :images).find(@post.id)
+      
       redirect_to posts_path, notice: '新規投稿されました。'
     else
       flash.now[:error] = @post.errors.full_messages.to_sentence
@@ -92,7 +89,6 @@ class PostsController < ApplicationController
     else
       @posts = Post.includes(:tags).all.order(date: :desc)
     end
-  
     render 'search_by_tag'
   end
 

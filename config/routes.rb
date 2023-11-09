@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
-    :registrations => 'users/registrations',
-    :sessions => 'users/sessions'
-  }
+  devise_for :users
+  devise_scope :user do
+    post 'users/sign_out', to: 'devise/sessions#destroy'
+    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+  end
   root to: "home#index"
   get 'home/index'
   get 'users/mypage', to: 'users#mypage'
@@ -10,9 +11,6 @@ Rails.application.routes.draw do
   get 'users/show', to: 'users#show'
   get 'users/show/edit', to: 'users#edit'
   resources :users, only: [:edit, :update, :mypage, :show]
-  devise_scope :user do
-    post 'users/sign_out', to: 'devise/sessions#destroy'
-  end
   get 'posts/new', to: 'posts#new'
   post 'posts/new', to: 'posts#new'
   post 'posts/index', to: "posts#index"

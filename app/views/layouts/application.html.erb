@@ -27,12 +27,14 @@
     </header>
     
     <% if flash[:notice] %>
-      <p>Notice: <%= flash[:notice] %></p>
+      <div class="custom-alert success" id="custom-alert">
+        <%= flash[:notice] %>
+      </div>
     <% end %>
     <% if flash[:alert] %>
-    <div class="alert alert-danger d-flex align-items-center" role="alert">
-      <p><%= flash[:alert] %></p>
-    </div>
+      <div class="custom-alert">
+        <%= flash[:alert] %>
+      </div>
     <% end %>
 
     <%= yield %>

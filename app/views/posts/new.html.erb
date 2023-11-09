@@ -3,7 +3,15 @@
 <% end %>
 <section class="PostSection">
   <div class="PostContainer">
-  <h2>✴︎新規投稿✴︎</h2>
+    <ul class="NavList">
+      <li class="NavListItem">
+        <%= link_to posts_index_path do %>
+          <i class="fas fa-reply"></i>
+          戻る
+        <% end %>
+      </li>
+    </ul>
+    <h2>✴︎新規投稿✴︎</h2>
     <%= form_for(@post, url: posts_path,  html: { multipart: true, data: { turbo: false } }) do |f| %>
       <div class="field">
         <i class="far fa-comment"></i>

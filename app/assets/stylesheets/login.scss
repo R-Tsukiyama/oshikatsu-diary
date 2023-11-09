@@ -74,8 +74,8 @@ label {
 }
 
 .login-signup-button {
-  margin-bottom: 50px;
-  color: #fff;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .login-button {
@@ -84,8 +84,7 @@ label {
   border: none;
   background-color: #79abdd;
   padding: 15px;
-  margin-top: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   cursor: pointer;
   width: 80%;
   font-size: 15px;
@@ -95,15 +94,32 @@ label {
   background-color: #36608a;
 }
 
-.new-account {
+.guest-login-button {
+  text-decoration: none;
+  color: #fff;
+  border-radius: 50px;
+  border: none;
+  background-color: #806cc3ac;
+  padding: 15px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.guest-login-button:hover {
+  background-color: #5c417b9c;
+}
+
+.new-account-button {
   color: #ffffff9b;
   padding: 15px;
   text-decoration: none;
-  margin-bottom: 40px;
   cursor: pointer;
+  margin-top: 20px;
 }
 
-.new-account:hover{
+.new-account-button:hover {
   color: #92bbe4;
 }
 

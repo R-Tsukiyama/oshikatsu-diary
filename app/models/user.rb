@@ -9,6 +9,15 @@ class User < ApplicationRecord
   has_many :posts, class_name: 'Post'
 
   before_create :generate_user_id
+  
+  GUEST_USER_EMAIL = "guest@example.com"
+
+  def self.guest
+    find_or_create_by!(email: GUEST_USER_EMAIL) do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.username = "ゲストユーザー"
+    end
+  end
 
   private
 
