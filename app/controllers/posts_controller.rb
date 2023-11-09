@@ -37,7 +37,7 @@ class PostsController < ApplicationController
       redirect_to posts_path, notice: '新規投稿されました。'
     else
       flash.now[:error] = @post.errors.full_messages.to_sentence
-      render :new, status: :unprocessable_entity
+      render :new
     end
   end
 

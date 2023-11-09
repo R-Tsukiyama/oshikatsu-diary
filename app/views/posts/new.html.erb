@@ -1,11 +1,10 @@
 <% content_for :js do %>
   <%= javascript_import_module_tag "post" %>
 <% end %>
-<%= render "layouts/shared/errors", obj:@post %>
 <section class="PostSection">
   <div class="PostContainer">
   <h2>✴︎新規投稿✴︎</h2>
-    <%= form_for(@post, url: posts_path, html: { multipart: true }) do |f| %>
+    <%= form_for(@post, url: posts_path,  html: { multipart: true, data: { turbo: false } }) do |f| %>
       <div class="field">
         <i class="far fa-comment"></i>
         <%= f.label :title, "Title" %><br>
