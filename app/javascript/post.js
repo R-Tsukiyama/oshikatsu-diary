@@ -1,9 +1,3 @@
-document.addEventListener('turbo:load', function() {
-  // ページ読み込み後に非表示にするための処理
-  setTimeout(function() {
-    document.getElementById('custom-alert').style.display = 'none';
-  }, 5000); // 5000ミリ秒（5秒）後に非表示にする
-});
 
 //カレンダー処理
 function initializeFlatpickr() {

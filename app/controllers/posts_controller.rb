@@ -40,44 +40,25 @@ class PostsController < ApplicationController
 
   def edit
     @post = current_user.posts.find(params[:post_id])
+    @deleted_images = [] 
   end
 
   def update
-    @post = current_user.posts.find(params[:post_id])
-    if params[:post][:images].present?
-      @post.images.purge  # 既存の画像を削除
-      params[:post][:images].each do |image|
-        @post.images.attach(image)  # 新しい画像をアタッチ
-      end
-    end
-
-        # 画像の削除処理
-        if params[:post][:remove_images].present?
-          params[:post][:remove_images].each do |image_id|
-            image = @post.images.find_by(id: image_id)
-            image.purge  # 画像を削除
-          end
-        end
+    @post = current_user.posts.find(params[:id])
     if @post.update(post_params)
-      @post.tag_list.add(params[:post][:tag_list], parse: true)
-      @post.save
+      # Handle success
       redirect_to @post, notice: '投稿を更新しました。'
     else
+      # Handle failure
       render :edit
     end
   end
 
+
   def destroy
-    @post = current_user.posts.find(params[:post_id])
+    @post = current_user.posts.find(params[:id])
     @post.destroy
     redirect_to posts_path, notice: '投稿を削除しました。'
-  end
-  
-  def destroy_image
-    @post = Post.find(params[:post_id])
-    image = @post.images.find(params[:image_id])
-    image.purge
-    redirect_to edit_post_path(@post), notice: '画像を削除しました'
   end
   
   def search_by_tag
@@ -92,6 +73,7 @@ class PostsController < ApplicationController
     render 'search_by_tag'
   end
 
+  
   private
 
   def post_params

@@ -23,11 +23,6 @@ Rails.application.routes.draw do
       get 'index'
     end
   end
-  resources :posts do
-    member do
-      delete 'destroy_image/:image_id', to: 'posts#destroy_image', as: 'destroy_image'
-    end
-  end
   get 'search_by_tag', to: 'posts#search_by_tag', as: 'search_by_tag'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
