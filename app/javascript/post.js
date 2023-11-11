@@ -1,3 +1,20 @@
+window.toggleDetails = function(feature) {
+  var details = document.getElementById(feature + 'Details');
+  
+  // クリックされたDiaryFeatureDetailsが表示されている場合は非表示にする
+  var computedStyle = window.getComputedStyle(details);
+  if (computedStyle.display !== 'none') {
+    details.style.display = 'none';
+  } else {
+    // すべてのDiaryFeatureDetailsを非表示にする
+    var allDetails = document.getElementsByClassName('DiaryFeatureDetails');
+    for (var i = 0; i < allDetails.length; i++) {
+      allDetails[i].style.display = 'none';
+    }
+    // クリックされたDiaryFeatureDetailsを表示する
+    details.style.display = 'block';
+  }
+}
 
 //カレンダー処理
 function initializeFlatpickr() {
@@ -56,23 +73,26 @@ document.addEventListener("turbo:load", function() {
 });
 
 //画像表示
-var mySwiper = new Swiper('.swiper-container', {
-  loop: true,
-  effect: 'slide',
-  speed: 1500,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: true
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    type: 'bullets',
-    clickable: true
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+document.addEventListener('turbo:load', function () {
+  // Swiperの初期化
+  var mySwiper = new Swiper('.swiper-container', {
+    loop: true,
+    effect: 'slide',
+    speed: 1500,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: true
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
 });
 
 //カレンダーから投稿詳細への処理
@@ -100,4 +120,3 @@ document.addEventListener('turbo:load', (event) => {
     link.addEventListener('click', handleTurboFrameLinkClick);
   });
 });
-

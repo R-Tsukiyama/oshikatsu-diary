@@ -45,11 +45,15 @@ class PostsController < ApplicationController
 
   def update
     @post = current_user.posts.find(params[:id])
-    if @post.update(post_params)
-      # Handle success
-      redirect_to @post, notice: '投稿を更新しました。'
+    # 新しい画像を追加
+    if params[:post][:images].present?
+      @post.images.attach(params[:post][:images])
+    end
+
+    # 他の更新処理
+    if @post.update(post_params.except(:images)) 
+      redirect_to @post, notice: '再投稿しました。'
     else
-      # Handle failure
       render :edit
     end
   end
@@ -77,6 +81,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :date, :caption, :address, :latitude, :longitude, :tag_list, images: [])
+    params.require(:post).permit(:title, :date, :caption, :address, :latitude, :longitude, :tag_list, images: [], images_attachments_attributes: [ :id, :_destroy ])
   end
 end

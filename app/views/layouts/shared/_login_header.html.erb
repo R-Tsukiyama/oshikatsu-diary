@@ -5,6 +5,11 @@
         <%= image_tag 'oshikatsu-logo.png', alt: "サイトロゴ", class: "navbar-logo-img" %>
       <% end %>
     </div>
+    <div class="navbar-mypage">
+      <%= link_to posts_index_path do %>
+        <i class="fas fa-home"></i>
+      <% end %>
+    </div>
     <div class="dropdown">
       <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
         <div class="userinformation">

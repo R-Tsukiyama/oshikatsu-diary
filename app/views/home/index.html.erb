@@ -1,7 +1,7 @@
 <main>
   <div class="FirstView">
     <div class="Container">
-      <h1 class ="FirstViewTitle">
+      <h1 class="FirstViewTitle">
         推し活日記<br>を<br>始めよう
       </h1>
     </div>
@@ -16,24 +16,58 @@
         推し活動を振り返り、思い出を記録しましょう。
       </p>
       <div class="DiaryFeatures">
-        <div class="DiaryFeature">
+        <div class="DiaryFeature" onclick="toggleDetails('calendar')">
           <i class="fas fa-calendar-alt"></i>
-          <p>カレンダー形式で活動を記録</p>
+          <p>カレンダー形式で<br>推し活動を記録</p>
         </div>
-        <div class="DiaryFeature">
+        <div class="DiaryFeature" onclick="toggleDetails('map')">
           <i class="fas fa-map-marked-alt"></i>
-          <p>詳細な場所情報を追加</p>
+          <p>場所情報を追加</p>
         </div>
-        <div class="DiaryFeature">
-          <i class="fas fa-images"></i>
-          <p>写真や画像を添付</p>
+        <div class="DiaryFeature" onclick="toggleDetails('images')">
+         <i class="fas fa-images"></i>
+          <p>写真を添付</p>
         </div>
-        <div class="DiaryFeature">
-          <i class="fas fa-tags"></i>
-          <p>タグ管理機能で簡単絞り込み</p>
+        <div class="DiaryFeature" onclick="toggleDetails('tags')">
+          <i class="fas fa-tag"></i>
+          <p>タグ機能で<br>簡単絞り込み</p>
         </div>
+      </div>
+      <div id="calendarDetails" class="DiaryFeatureDetails">
+        <p>手帳のようにカレンダー形式で投稿管理ができます。<br>思い出が振り返りやすくなります。</p>
+        <%= image_tag ('caption_calendar.png'), alt: "カレンダーのスクリーンショット", class: "caption-feature"%>
+      </div>
+      <div id="mapDetails" class="DiaryFeatureDetails">
+        <p>「GoogleMap」を使用した場所情報を追加できます。</p>
+        <%= image_tag ('caption_map.gif'), alt: "地図入力のGIF", class: "caption-feature"%>
+      </div>
+      <div id="imagesDetails" class="DiaryFeatureDetails">
+        <p>写真を添付できます。<br>もちろん文章だけの投稿も可能です。</p>
+        <div class="caption-post">
+          <%= image_tag ('caption_post1.png'), alt: "投稿例1", class: "caption-feature-post"%>
+          <%= image_tag ('caption_post2.png'), alt: "投稿例2", class: "caption-feature-post"%>
+          <%= image_tag ('caption_post.png'), alt: "投稿例3", class: "caption-feature-post"%>
+        </div>
+      </div>
+      <div id="tagsDetails" class="DiaryFeatureDetails">
+        <p>登録したタグをクリックすると、<br>同じタグの投稿を簡単に見つけられます。</p><br>
+        <%= image_tag ('caption_tag.gif'), alt: "タグのGIF" %>
       </div>
     </div>
   </section>
+  <% unless user_signed_in? %>
+    <section class="SignUpLoginSection">
+      <div class="SignUpLoginContainer">
+        <div class="SignUpLoginOption">
+          <p>まだアカウントをお持ちでない方は</p>
+          <%= link_to "登録はこちら",new_user_registration_path, class:"SignUpLink" %>
+        </div>
+        <div class="SignUpLoginOption">
+          <p>ログイン/ゲストログインの方は</p>
+          <%= link_to "ログインはこちら",new_user_session_path, class:"SignUpLink" %>
+        </div>
+      </div>
+    </section>
+  <% end %>
 </main>
 <%= render 'layouts/shared/footer' %>

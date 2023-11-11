@@ -3,9 +3,10 @@ class Post < ApplicationRecord
   belongs_to :user
   geocoded_by :address
   after_validation :geocode
-  has_many :images
+  has_many :images, dependent: :destroy
   has_many_attached :images
-  attr_accessor :remove_images
+  accepts_nested_attributes_for :images_attachments, allow_destroy: true
+
   
   validates :title, presence: true
   validates :date, presence: { message: "日付を選択してください" }

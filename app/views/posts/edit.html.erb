@@ -34,12 +34,15 @@
         <div id="image-preview" class="image-preview"></div>
       </div>
       <div class="image-preview-container">
-        <% if @post.images.attached? %>
-          <% @post.images.each do |image| %>
-            <div class="image-preview-slider">
-              <%= image_tag image %>
-            </div>
-          <% end %>
+        <%= f.fields_for :images_attachments do |image| %>
+          <div class="form-check">
+            <%= image.hidden_field :id %>
+            <%= image.check_box :_destroy, { class: 'check-input', checked: false }, true, false %>
+            <%= label_tag do %>
+              削除する
+            <% end %>
+          </div>
+          <%= image_tag url_for(image.object), style: "max-width: 200px; max-height: 200px;" %>
         <% end %>
       </div>
       <div class="field">
