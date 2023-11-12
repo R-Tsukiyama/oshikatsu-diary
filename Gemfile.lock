@@ -80,6 +80,7 @@ GEM
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 2.11.8, < 3)
     builder (3.2.4)
+    byebug (11.1.3)
     capybara (3.39.2)
       addressable
       matrix
@@ -112,12 +113,18 @@ GEM
       warden (~> 1.2.3)
     devise-i18n (1.12.0)
       devise (>= 4.9.0)
+    diff-lcs (1.5.0)
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
       railties (>= 3.2)
     erubi (1.12.0)
     execjs (2.9.1)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     ffi (1.16.3)
     geocoder (1.8.2)
     globalid (1.2.1)
@@ -180,6 +187,12 @@ GEM
     pry (0.14.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
+    pry-byebug (3.10.1)
+      byebug (~> 11.0)
+      pry (>= 0.13, < 0.15)
+    pry-doc (1.4.0)
+      pry (~> 0.11)
+      yard (~> 0.9.11)
     pry-rails (0.3.9)
       pry (>= 0.10.4)
     psych (5.1.1.1)
@@ -237,6 +250,23 @@ GEM
       actionpack (>= 5.2)
       railties (>= 5.2)
     rexml (3.2.6)
+    rspec-core (3.12.2)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.3)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-mocks (3.12.6)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-rails (6.0.3)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
+      railties (>= 6.1)
+      rspec-core (~> 3.12)
+      rspec-expectations (~> 3.12)
+      rspec-mocks (~> 3.12)
+      rspec-support (~> 3.12)
+    rspec-support (3.12.1)
     ruby-graphviz (1.2.5)
       rexml
     ruby-vips (2.2.0)
@@ -293,6 +323,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
+    yard (0.9.34)
     zeitwerk (2.6.12)
 
 PLATFORMS
@@ -309,6 +340,7 @@ DEPENDENCIES
   devise
   devise-i18n
   dotenv-rails
+  factory_bot_rails
   geocoder
   gmaps4rails
   importmap-rails
@@ -317,11 +349,14 @@ DEPENDENCIES
   jquery-ui-rails
   mini_magick
   mysql2 (~> 0.5)
+  pry-byebug
+  pry-doc
   pry-rails
   puma (~> 5.0)
   rails (~> 7.0.6)
   rails-erd
   rails-i18n
+  rspec-rails
   sassc-rails
   selenium-webdriver
   simple_calendar (~> 2.0)
