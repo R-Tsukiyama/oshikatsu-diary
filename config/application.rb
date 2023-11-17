@@ -20,6 +20,9 @@ module OshikatsuDiary
       end
     end
     config.active_storage.replace_on_assign_to_many = false
+    
+    config.assets.paths << Rails.root.join('node_modules')
+    config.assets.precompile += %w( flatpickr/dist/flatpickr.min.css )
     #
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
