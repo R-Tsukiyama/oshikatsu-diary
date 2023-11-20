@@ -9,7 +9,7 @@ class Post < ApplicationRecord
 
   
   validates :title, presence: true
-  validates :date, presence: { message: "日付を選択してください" }
+  validates :date, presence: { message: "日付を選択してください。" }
   
   def start_time
     self.date

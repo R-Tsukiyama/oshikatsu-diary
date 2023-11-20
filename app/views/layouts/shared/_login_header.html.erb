@@ -28,7 +28,7 @@
         <hr class="dropdown-hr">
         <li class="dropdown-item"><%= link_to "アカウント編集", users_show_edit_path %></li>
         <hr class="dropdown-hr">
-        <li class="dropdown-item"><%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }, class: "logout-btn" %></li>
+        <li class="dropdown-item"><%= button_to 'ログアウト', destroy_user_session_path, data: { turbo: false, method: :delete }, id: "logout-btn", style: "background-color: transparent; outline: none; border: none; "%></li>
       </ul>
     </div>
   </div>

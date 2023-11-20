@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.build(post_params)
+    @post = current_user.posts.build(post_params.except(:images))
     if @post.save
       if params[:post][:images].present?
         @post.images.purge
@@ -81,6 +81,16 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :date, :caption, :address, :latitude, :longitude, :tag_list, images: [], images_attachments_attributes: [ :id, :_destroy ])
+    params.require(:post).permit(
+      :title,
+      :date,
+      :caption,
+      :address,
+      :latitude,
+      :longitude,
+      :tag_list,
+      images: [],
+      images_attachments_attributes: [ :id, :_destroy ]
+      )
   end
 end
