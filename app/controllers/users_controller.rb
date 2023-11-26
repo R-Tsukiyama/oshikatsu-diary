@@ -15,11 +15,12 @@ class UsersController < ApplicationController
   end
 
   def update
-    if current_user.update(user_params)
-      flash[:notice] = "更新しました"
-      redirect_to user_path(current_user)
+    @user = current_user
+    if user_params[:username].present? && @user.update(user_params)
+      redirect_to posts_index_path, notice: '更新しました。'
     else
-      render "edit"
+      flash.now[:alert] = '名前を入力してください。' if user_params[:username].blank?
+      render :edit
     end
   end
 
