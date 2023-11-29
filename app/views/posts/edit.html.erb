@@ -9,7 +9,7 @@
       </li>
     </ul>
     <h2>✴︎編集✴︎</h2>
-    <%= form_for(@post, url: post_path(@post), html: { method: :patch, multipart: true }) do |f| %>
+    <%= form_for(@post, url: post_path(@post), html: { method: :patch, multipart: true, data: { turbo: false } }) do |f| %>
       <div class="field">
         <i class="far fa-comment"></i>
         <%= f.label :title %>

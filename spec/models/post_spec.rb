@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  let(:user) { create(:user) }
+  let!(:user) { create(:user) }
 
   describe "バリデーションの検証" do
     it "日付とタイトルが正しく設定されていること" do
@@ -70,6 +70,16 @@ RSpec.describe Post, type: :model do
       post.save
       
       expect(post.tag_list).to eq(["タグ1", "他のタグ", "タグ2"])
+    end
+  end
+  
+  describe "投稿削除時の関連付けの検証" do
+    it "投稿を削除した際に関連する画像も削除されること" do
+      post = create(:post, user: user)
+      file_path = Rails.root.join('spec', 'fixtures', 'image.jpg')
+      post.images.attach(io: File.open(file_path), filename: 'image.jpg')
+
+      expect { post.destroy }.to change { ActiveStorage::Attachment.count }.by(-1)
     end
   end
 end
