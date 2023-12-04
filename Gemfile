@@ -89,6 +89,5 @@ group :test do
   gem 'pry-rails'
   gem 'pry-doc'
   gem 'pry-byebug'
-  gem 'selenium-webdriver'
   gem 'rails-controller-testing'
 end
