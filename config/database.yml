@@ -54,4 +54,4 @@ production:
   database: oshikatsu_diary_development
   username: <%= ENV['MYSQL_USERNAME'] %>
   password: <%= ENV['MYSQL_PASSWORD'] %>
-  url: <%= ENV['JAWSDB_URL']&.sub(/\Amysql/, 'mysql2') %>
+  url: <%= ENV['JAWSDB_URL'] %>
