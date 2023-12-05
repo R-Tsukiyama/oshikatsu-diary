@@ -1,24 +1,35 @@
-# README
+# 推し活日記アプリ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 概要
 
-Things you may want to cover:
+推し活に特化した日記投稿アプリです。アイドルやアニメのファン活動をするユーザー向けに、日記を記録しやすくする機能を提供しています。
 
-* Ruby version
+## 機能
 
-* System dependencies
+- **ログイン、ログアウト機能、ゲストログイン機能（Devise使用）**: ユーザーアカウントを簡単に作成し、ログインすることができます。また、ゲストとしてログインしてアプリを試すこともできます。
+  
+- **投稿機能（Google Maps API、タグ管理機能）**: 写真などを添付して日記を投稿できます。Google Maps APIを使用して詳細な場所を指定できます。タグ管理機能により、同じタグの投稿を見つけやすくなります。
 
-* Configuration
+- **カレンダー機能（Simple Calendar使用）**: 何日に何をしたかをカレンダー形式で表示できます。推し活を振り返ったり、特定の日付の日記を見返したりすることができます。
 
-* Database creation
+## 開発環境
 
-* Database initialization
+- MacBook Air
 
-* How to run the test suite
+## 使用技術
 
-* Services (job queues, cache servers, search engines, etc.)
+- Ruby on Rails (Ruby 3.1.4、Rails 7.0.8)
+- Google Maps API
+- jQuery
+- JavaScript
+- Bootstrap, CSS
 
-* Deployment instructions
+## 開発に至った経緯
 
-* ...
+「推し活」という言葉が若年層を中心に広まり、アイドルやアニメのファン活動として社会現象化しています。
+私も外出先でアクリルスタンドを携帯して写真を撮理、これらの思い出を日記につけたいと感じる機会が増えました。
+
+しかし、SNSのX（旧：Twitter）やInstagramでは、「推し活」を記録する媒体としては不十分な機能があると感じました。Xは文字だけの投稿ができますが、近年のサービス修正により自分の投稿を振り返るのが難しくなっています。一方でInstagramは詳細な場所情報を含んだ投稿ができますが、写真の添付が必須であり、文字だけの投稿ができません。
+
+そこで、「推し活」に特化した日記アプリを開発することを考えました。
+このアプリでは、自分が何日に何をしたかという記録をカレンダー形式で表示し、推し活を振り返ったり懐かしんだりすることができます。これにより、より充実した推し活が可能となるでしょう。
