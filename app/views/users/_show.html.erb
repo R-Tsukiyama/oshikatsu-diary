@@ -19,17 +19,15 @@
           <%= image_tag ("default-avatar.png"), class: "rounded-circle", size: '100x100' %>
         <% end %>
       </div>
-      <div class="AccountItem">
-        <h4>Name</h4>
-        <p><%= user.username %></p>
-      </div>
-      <div class="AccountItem">
-        <h4>Profile</h4>
-        <p><%= user.profile %></p>
-      </div>
-      <div class="AccountItem">
-        <h4>User ID</h4>
-        <p><%= user.user_id %></p>
+      <div class="AccountDetails">
+        <div class="AccountItem">
+          <h4>Name</h4>
+          <p><%= user.username %></p>
+        </div>
+        <div class="AccountItem">
+          <h4>Profile</h4>
+          <p><%= user.profile %></p>
+        </div>
       </div>
     </div>
   </div>

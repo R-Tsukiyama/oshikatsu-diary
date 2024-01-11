@@ -7,6 +7,11 @@ li {
   background-size: cover;
   height: 120px;
   padding: 10px;
+  .dropdown {
+    margin-right: 35px;
+    max-width: 80%;
+    padding: 0;
+  }
 }
 
 .navbar a {
@@ -65,7 +70,92 @@ li {
   transform: scale(1, 0.3);
 }
 
-@media(max-width: 767px) {
+@media(max-width: 390px) {
+  .navbar-logo-img {
+    width: 180px;
+  }
+  .navbar {
+    height: 60px;
+  }
+  .dropdown {
+    margin-right: 5px !important;
+    padding: 0;
+  }
+}
+
+.dropdown {
+  a {
+    text-decoration: none;
+  }
+  .btn-secondary {
+    background-color: #5b4660e6;
+    border-color: #5b4660e6;
+  }
+  .btn:focus {
+    box-shadow: none;
+  }
+  .username {
+    color: #fff;
+  }
+  img {
+    margin-right: 8px;
+  }
+  .dropdown-menu {
+    text-align: center;
+    padding: 9px 0;
+
+    .dropdown-item {
+      font-size: 14px;
+      line-height: 18px;
+      padding: 0 8px;
+      > a {
+        color: #333;
+        display: block;
+        width: 100%;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    width: 100%;
+  }
+  .container-fluid {
+    width: 100%;
+  }
+  .navbar-logo-img {
+    margin-right: auto;
+    width: 135px;
+  }
+  .dropdown {
+    margin-right: 35px;
+    max-width: 80%;
+    padding: 0;
+  }
+  .userinformation {
+    display: flex;
+    align-items: center;
+  }
+  .dropdown-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 40px;
+    background-color: #5b4660e6;
+    text-align: center;
+    font-size: 16px;
+    margin: 0 auto;
+  }
+  .dropdown-item {
+    margin: 10px 0;
+  }
+  .profile-image {
+    width: 40px; /* プロフィール画像のサイズ調整 */
+    height: 40px;
+    border-radius: 50%;
+  }
   .hamburger-menu{
     cursor: pointer;
     display: block;
@@ -104,7 +194,7 @@ li {
     margin-top: 0;
     padding-top: 10px;
     padding-left: 0;
-    padding-bottom: 75px;
+    padding-bottom: 55px;
     transform: translateY(-150%);
     transition: all 0.6s;
     z-index: 99;
@@ -146,46 +236,50 @@ li {
   }
 }
 
-@media(max-width: 390px) {
-  .navbar-logo-img {
-    width: 180px;
-  }
+@media (max-width: 415px) {
   .navbar {
+    width: 100%;
+    position: relative;
+  }
+  .container-fluid {
+    width: 100%;
     height: 60px;
+    padding: 0%;
+    position: absolute;
   }
-}
-
-.dropdown {
-  a {
-    text-decoration: none;
+  .navbar-logo-img {
+    width: 100px;
   }
-  .btn-secondary {
-    background-color: #5b4660e6;
-    border-color: #5b4660e6;
+  .navbar-mypage {
+    font-size: 20px;
   }
-  .btn:focus {
-    box-shadow: none;
+  .dropdown-item {
+    margin: 0px !important;
+    width: 100px;
+    top: 5px;
+    font-size: 10px !important;
+    padding: 0 !important;
   }
-  .username {
-    color: #fff;
-  }
-  img {
-    margin-right: 8px;
+  .dropdown {
+    margin: 0;
   }
   .dropdown-menu {
-    text-align: center;
-    padding: 9px 0;
-
-    .dropdown-item {
-      font-size: 14px;
-      line-height: 18px;
-      padding: 0 8px;
-      > a {
-        color: #333;
-        display: block;
-        width: 100%;
-        text-decoration: none;
-      }
-    }
+    min-width: unset;
+    min-width: 100px !important;
+  }
+  #dropdownMenuLink {
+    height: 50px;
+    padding-top: 5px;
+  }
+  .profile-image {
+    width: 30px;
+    height: 30px;
+  }
+  .navbar-list {
+    font-size: 10px;
+  }
+  .navbar-list-item {
+    margin-bottom: 8px;
   }
 }
+

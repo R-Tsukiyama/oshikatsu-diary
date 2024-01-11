@@ -40,6 +40,67 @@ body {
     height: 580px;
   }
 }
+
+@media(max-width: 767px) {
+  .FirstView {
+    height: 500px;
+    padding-top: 50px;
+    background-position: center;
+  }
+  .FirstViewTitle {
+    font-size: 34px;
+    line-height: 36px;
+    margin-top: 60px;
+  }
+  .DiarySection {
+    padding: 30px 0;
+  }
+  .DiaryTitle {
+    font-size: 28px;
+  }
+  .DiaryDescription {
+    font-size: 16px;
+  }
+}
+
+@media(max-width: 415px) {
+  .FirstView {
+    height: 320px;
+    padding-top: 30px;
+  }
+  .FirstViewTitle {
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 40px;
+  }
+  .DiarySection {
+    padding: 20px 0;
+  }
+  .DiaryTitle {
+    font-size: 24px;
+  }
+  .DiaryDescription {
+    font-size: 15px !important;
+  }
+  .DiaryFeatures {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .DiaryFeature {
+    width: calc(50% - 5px);
+    flex-basis: calc(50% - 5px);
+    margin-bottom: 10px;
+  }
+  .SignUpLoginOption {
+    p {
+      font-size: 10px !important;
+    }
+    font-size: 13px;
+  }
+}
+
 .DiarySection {
   background-color: #f5f5f5;
   padding: 50px 0;
@@ -123,6 +184,10 @@ body {
   .DiaryFeature {
     animation: fadeInUp 1s ease-in-out;
   }
+  
+  .DiaryFeatureDetails img {
+    width: 100%;
+  }
 
   .caption-feature {
     max-width: 700px;
@@ -139,7 +204,7 @@ body {
   }
 
   .caption-feature-post {
-    width: 30%;
+    width: 30% !important;
     border-radius: 8px;
     margin-right: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

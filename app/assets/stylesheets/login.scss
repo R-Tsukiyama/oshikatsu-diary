@@ -142,3 +142,34 @@ label {
 .username {
   align-items: center;
 }
+
+@media(max-width: 767px) {
+  .AccountFormWrapper {
+    padding: 50px;
+  }
+
+  .AccountFormContainer {
+    max-width: 90%;
+    padding: 10px;
+  }
+}
+
+@media(max-width: 415px) {
+  .AccountFormWrapper {
+    padding: 10px;
+  }
+  .AccountFormContainer {
+    max-width: 90%;
+    padding: 10px;
+  }
+  .form-group {
+    margin-bottom: 0.3rem;
+  }
+  .form-label {
+    font-size: 12px;
+    margin-bottom: 2rem;
+  }
+  .form-control {
+    font-size: 12px;
+  }
+}

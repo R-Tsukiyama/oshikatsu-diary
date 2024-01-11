@@ -32,7 +32,8 @@
   border: 1px solid #e1e8ed;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 25px;
+  margin: 10px;
 }
 
 .AccountHeader {
@@ -67,9 +68,8 @@
 }
 
 .form-buttons {
-  margin-left: 50%;
+  margin-left: 100px;
   margin-bottom: 25px;
-  justify-content: space-between;
   .submit {
     margin-left: 5%;
     color: #fff;
@@ -105,9 +105,6 @@
     max-width: 20ch;
     white-space: pre-wrap;
   }
-  .rounded-circle {
-    margin-left: 30px;
-  }
 }
 
 /* 編集画面 */
@@ -130,6 +127,7 @@
   p {
     color: #1da1f2;
     font-size: 65px;
+    margin-right: 20px;
   }
   
   .NavList {
@@ -209,35 +207,179 @@
   .cancel {
     margin-right: 10px;
   }
+}
 
-  @media screen and (max-width: 768px) {
-    .UserEditContainer {
-      padding: 10px;
+@media screen and (max-width: 767px) {
+  .UserSection {
+    margin: 5px;
+  }
+  .UserContainer {
+    display: block;
+  }
+  .NavList {
+    padding: 3px;
+    display: block;
+  }
+  .NavListItem {
+    margin-right: 10px;
+    font-size: small;
+  }
+  .AccountInformation {
+    padding: 8px;
+    margin-bottom: 20px;
+    align-items: center;
+    display: flex;
+  }
+  .AccountDetails {
+    display: flex;
+    margin-left: 50px;
+    gap: 30px; 
+  }
+  .AccountHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  .Avatar img {
+    width: 100px;
+    height: 100px;
+  }
+  .ProfileInfo {
+    margin-left: 10px;
+  }
+  .form-buttons {
+    display: flex;
+    margin-left: 50%;
+    margin-bottom: 15px;
+    align-items: center;
+    .submit {
+      padding: 8px;
+      font-size: small;
     }
-
-    .NavList {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .NavListItem {
-      margin-bottom: 10px;
-    }
-
-    .user-icon-group {
-      align-items: center;
-      text-align: center;
+  }
+  .user-image-preview {
+    border-radius: 50% !important;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+  }
+  .AccountItem {
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: 0;
+    h4 {
+      font-size: 14px;
+      border-radius: 15px;
+      width: 100px;
       display: flex;
-      justify-content: space-between;
+      align-items: center;
+      justify-content: center; 
     }
-    
-    .rounded-circle {
-      width: 120px;
-      height: 120px;
-    }
-    
     p {
-      font-size: 50px;
+      font-size: x-small;
+      max-width: 767px;
+      margin-bottom: 0;
     }
+    .rounded-circle {
+      align-items: center;
+      width: 80px;
+      height: 80px;
+    }
+  }
+  .UserEditContainer {
+    padding: 15px;
+    margin: 10px auto;
+    max-width: 100%;
+    box-shadow: none;
+    h3 {
+      font-size: 1.2rem;
+      color: #5aa5cdc1;
+    }
+    p {
+      font-size: 30px;
+      margin-right: 20px;
+    }
+    .NavList {
+      margin: 0;
+    }
+    .NavListItem {
+      margin-bottom: 5px;
+    }
+    .user-icon-group {
+      margin: 15px 0;
+    }
+    .upload-form {
+      margin: 10px 0;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .btn {
+      padding: 8px 15px;
+      font-size: small;
+    }
+    .btn-outline-secondary {
+      border-radius: 15px;
+    }
+    .submit {
+      border-radius: 15px;
+    }
+    .AccountInformation {
+      display: block;
+      width: 100%;
+    }
+    .AccountHeader {
+      display: flex !important;
+      flex-direction: initial;
+    }
+    h4 {
+      width: 100% !important;
+    }
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .AccountItem {
+    .rounded-circle {
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      margin-left: 15px !important;
+    }
+  }
+  .AccountDetails {
+    margin-left: 25px;
+    gap: 25px; 
+  }
+  .UserEditContainer {
+    padding: 15px;
+    margin: 10px auto;
+    max-width: 100%;
+    box-shadow: none;
+  }
+  .user-icon-group {
+    .rounded-circle {
+      height: 90px;
+      width: 90px;
+    }
+    p {
+      margin-right: 20px;
+    }
+  }
+  .form-buttons {
+    align-items: center;
+    margin-left: 30%;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .AccountItem {
+    h4 {
+      width: 80px;
+    }
+  }
+  .AccountDetails {
+    margin-left: 25px;
+    gap: 25px; 
   }
 }
