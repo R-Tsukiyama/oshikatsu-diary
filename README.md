@@ -27,22 +27,25 @@
 
 ## 操作概要
 - **ゲストログイン方法**: ヘッダーのログインページよりゲストログインボタンを押すとゲストユーザーとしてログインできます。ログイン後ヘッダー中央の家のアイコンをクリックすると、マイページ（投稿一覧）へと移ります。
+
 ![操作手順_ログイン](https://github.com/R-Tsukiyama/oshikatsu-diary/assets/133231418/c4ba7c32-a857-4df8-b2c2-04db44797414)
 
 
 - **カレンダーの表示方法**: 投稿一覧ページの隣にあるカレンダーマークのタブをクリックするとカレンダーが表示されます。カレンダー内で任意の投稿タイトルをクリックすると、投稿詳細へ移ります。
+
 ![操作手順_カレンダー](https://github.com/R-Tsukiyama/oshikatsu-diary/assets/133231418/77467dab-47fe-4fed-a8f4-a78f5322bc8d)
 
 
 - **新規投稿方法**: マイページ画面で右下のプラスマークをクリックすると新規投稿画面へ移ります（ヘッダー右上のドロップダウンメニューからでもアクセスできます）。
+
 ![操作手順_新規投稿](https://github.com/R-Tsukiyama/oshikatsu-diary/assets/133231418/515b13f3-3a72-4e81-84a3-7cf14b685d71)
 
 
 ## テスト
 - Respec
-・modelspec
-・requestspec
-・systemspec
+- modelspec
+- requestspec
+- systemspec
 
 ## 開発に至った経緯
 
