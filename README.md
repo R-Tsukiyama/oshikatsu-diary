@@ -42,10 +42,15 @@
 
 
 ## テスト
-- Respec
+**Respec**
 - modelspec
 - requestspec
 - systemspec
+
+
+## ER図
+<img width="811" alt="ER図" src="https://github.com/R-Tsukiyama/oshikatsu-diary/assets/133231418/ff8b3aa0-4696-4860-abb5-98eceaa2ad94">
+
 
 ## 開発に至った経緯
 
