@@ -51,7 +51,7 @@ geocoderを使用した位置情報検索機能です。ワードを入力する
 ![位置情報検索機能](https://github.com/R-Tsukiyama/oshikatsu-diary/assets/133231418/adcedf1d-0862-4021-92db-0af25e4e0700)
 
 
-- **編集機能**:
+### 編集機能
 投稿一覧もしくは投稿詳細画面で編集を行うことができます。画像を新たに選択し、既存の画像を削除することができます。
 
 ![投稿編集](https://github.com/R-Tsukiyama/oshikatsu-diary/assets/133231418/95e1b2f8-ea58-44c5-8fd5-cf5ad9571996)
