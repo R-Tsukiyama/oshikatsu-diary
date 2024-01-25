@@ -64,8 +64,15 @@ document.addEventListener("turbo:load", function() {
         // 画像と削除ボタンを削除
           previewContainer.removeChild(image);
           previewContainer.removeChild(deleteButton);
-          fileInput.value = ''; // ファイル選択をクリア
+
+          const newFiles = Array.from(fileInput.files).filter((f) => f !== file);
+          fileInput.value = '';
+
+          const newFileList = new DataTransfer();
+          newFiles.forEach((f) => newFileList.items.add(f));
+          fileInput.files = newFileList.files;
         });
+        previewContainer.appendChild(image);
         previewContainer.appendChild(deleteButton);
       }
     });

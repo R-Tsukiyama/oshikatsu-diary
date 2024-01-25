@@ -23,14 +23,14 @@ class PostsController < ApplicationController
           @post.images.attach(image)
         end
       end
-      
+
       tag_list = params[:post][:tag_list]
       if tag_list.present?
         @post.tag_list.add(tag_list, parse: true)
       end
-      
+
       @post = Post.includes(:tags, :images).find(@post.id)
-      
+
       redirect_to posts_path, notice: '新規投稿されました。'
     else
       flash.now[:error] = @post.errors.full_messages.to_sentence
@@ -58,7 +58,6 @@ class PostsController < ApplicationController
     end
   end
 
-
   def destroy
     @post = current_user.posts.find(params[:id])
     @post.destroy
@@ -77,7 +76,7 @@ class PostsController < ApplicationController
     render 'search_by_tag'
   end
 
-  
+
   private
 
   def post_params
