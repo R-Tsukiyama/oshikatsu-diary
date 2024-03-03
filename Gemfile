@@ -41,6 +41,7 @@ gem 'jquery-ui-rails'
 gem 'simple_calendar', '~>2.0'
 gem 'rails-i18n'
 gem 'sassc-rails'
+gem "aws-sdk-s3", require: false
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
